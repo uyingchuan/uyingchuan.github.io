@@ -6,23 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://uyc.gitee.io">
-  <title>音乐播放器项目知识点(0) | 小u</title>
+  <title>JavaScript知识点小记(未完) | 小u</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="在这里我会把开发音乐播放器项目中遇到的知识点记下来，方便自己学习，同时是对自己的记录。">
+  <meta name="description" content="js数据类型1.简介JavaScript语言共6种数据类型（ES6新增Symbol类型，现提出第八种BigInt）  Number    (数值) String    (字符串) Boolean    (布尔值) Undefined   (未定义) Null    (空值) Object    (对象，包括数组、函数)  2.typeof运算符可以确定一个值的类型，同样的方法有instanceof">
 <meta property="og:type" content="article">
-<meta property="og:title" content="音乐播放器项目知识点(0)">
-<meta property="og:url" content="https://uyc.gitee.io/2020/08/10/tech-notes/cloudmusic-note0/index.html">
+<meta property="og:title" content="JavaScript知识点小记(未完)">
+<meta property="og:url" content="https://uyc.gitee.io/2020/08/22/tech-notes/JavaScript/js-notes/index.html">
 <meta property="og:site_name" content="小u">
-<meta property="og:description" content="在这里我会把开发音乐播放器项目中遇到的知识点记下来，方便自己学习，同时是对自己的记录。">
+<meta property="og:description" content="js数据类型1.简介JavaScript语言共6种数据类型（ES6新增Symbol类型，现提出第八种BigInt）  Number    (数值) String    (字符串) Boolean    (布尔值) Undefined   (未定义) Null    (空值) Object    (对象，包括数组、函数)  2.typeof运算符可以确定一个值的类型，同样的方法有instanceof">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-08-10T11:30:00.000Z">
-<meta property="article:modified_time" content="2020-08-21T08:58:39.442Z">
+<meta property="article:published_time" content="2020-08-22T12:23:00.000Z">
+<meta property="article:modified_time" content="2020-08-23T06:39:51.424Z">
 <meta property="article:author" content="u影川">
-<meta property="article:tag" content="Vue">
-<meta property="article:tag" content="Element-UI">
-<meta property="article:tag" content="postcss-pxtorem">
+<meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="小u" type="application/atom+xml">
@@ -187,14 +185,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-tech-notes/cloudmusic-note0" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-tech-notes/JavaScript/js-notes" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      音乐播放器项目知识点(0)
+      JavaScript知识点小记(未完)
     </h1>
   
 
@@ -206,8 +204,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/08/10/tech-notes/cloudmusic-note0/" class="archive-article-date">
-        <time datetime="2020-08-10T11:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-10</time>
+<a href="/2020/08/22/tech-notes/JavaScript/js-notes/" class="archive-article-date">
+        <time datetime="2020-08-22T12:23:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-22</time>
 </a>
 
   
@@ -216,38 +214,22 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>在这里我会把开发<a target="_blank" rel="noopener" href="https://gitee.com/uyc/vue-cloudmusic">音乐播放器项目</a>中遇到的知识点记下来，方便自己学习，同时是对自己的记录。</p>
-<a id="more"></a>
-
+    <h2 id="js数据类型"><a href="#js数据类型" class="headerlink" title="js数据类型"></a>js数据类型</h2><h3 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h3><p>JavaScript语言共6种数据类型（<code>ES6</code>新增<code>Symbol</code>类型，现提出第八种<code>BigInt</code>）</p>
 <ul>
-<li><a href="#first">0.Vue批量注册组件</a></li>
-<li><a href="#second">1.移动端适配方案Rem</a></li>
-<li><a href="#third">2.Vue按需导入Element-UI组件</a></li>
+<li>Number    (数值)</li>
+<li>String    (字符串)</li>
+<li>Boolean    (布尔值)</li>
+<li>Undefined   (未定义)</li>
+<li>Null    (空值)</li>
+<li>Object    (对象，包括数组、函数)</li>
 </ul>
-<h2 id="first" style="display:block"></h2>
-
-<h2 id="1-Vue批量注册组件"><a href="#1-Vue批量注册组件" class="headerlink" title="1.Vue批量注册组件"></a>1.Vue批量注册组件</h2><p>学习一个新项目时遇到的一个知识点，复用率高的基础组件可以批量进行注册</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">install(Vue) &#123;</span><br><span class="line">    <span class="keyword">const</span> requireComponent = <span class="built_in">require</span>.context(</span><br><span class="line">        <span class="string">&quot;@/components/base&quot;</span>, <span class="comment">// 引入组件的根目录</span></span><br><span class="line">        <span class="literal">true</span>, <span class="comment">//是否需要查找下级目录</span></span><br><span class="line">        /[a-z0<span class="number">-9</span>]+\.(jsx?|vue)$/i</span><br><span class="line">    )</span><br><span class="line">    <span class="comment">// 批量注册基础组件</span></span><br><span class="line">    requireComponent.keys().forEach(<span class="function"><span class="params">fileName</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// 当前获取组件的配置数据</span></span><br><span class="line">        <span class="keyword">const</span> componentConfig = requireComponent(fileName)</span><br><span class="line">        <span class="comment">// 获取该组件的 default.name 属性</span></span><br><span class="line">        <span class="keyword">const</span> componentName = componentConfig.default.name</span><br><span class="line">        <span class="keyword">if</span> (componentName) &#123;</span><br><span class="line">            <span class="comment">// 注册组件</span></span><br><span class="line">            Vue.component(componentName, componentConfig.default || componentConfig)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="second" style="display:block"></h2>
-
-<h2 id="2-移动端适配方案Rem"><a href="#2-移动端适配方案Rem" class="headerlink" title="2.移动端适配方案Rem"></a>2.移动端适配方案Rem</h2><p>使用<code>rem</code>进行移动端适配是现在主流的适配方案，需要将设计师的<code>px</code>稿件转换成<code>rem</code>，然后用<code>js</code>实现根字体随屏幕尺寸变换，从而达到移动端适配的效果。我这次项目学习了使用<code>postcss-pxtorem</code>插件进行<code>rem</code>自动计算。</p>
-<h3 id="postcss-pxtorem插件的使用"><a href="#postcss-pxtorem插件的使用" class="headerlink" title="postcss-pxtorem插件的使用"></a>postcss-pxtorem插件的使用</h3><p>先在开发环境安装插件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -D postcss-pxtorem</span><br></pre></td></tr></table></figure>
-<p>接着在<code>package.json</code>文件中配置插件</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;postcss&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;plugins&quot;</span>: &#123;</span><br><span class="line">      <span class="string">&quot;autoprefixer&quot;</span>: &#123;&#125;,</span><br><span class="line">      <span class="string">&quot;postcss-pxtorem&quot;</span>: &#123;</span><br><span class="line">        <span class="string">&quot;rootValue&quot;</span>: <span class="number">14</span>,    <span class="comment">//设计稿根字体尺寸</span></span><br><span class="line">        <span class="string">&quot;propList&quot;</span>: [       <span class="comment">//需要转换的元素列表</span></span><br><span class="line">          <span class="string">&quot;*&quot;</span></span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>现在已经可以将<code>px</code>转换成<code>rem</code>了，接下来要根据设备屏幕尺寸变换根字体尺寸，需要在vue程序入口加载一个<code>rem.js</code>文件,我这里还使用了<code>lodash-es</code>插件实现<code>函数节流(throttle)</code>,先安装插件再使用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i --save lodash-es</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//rem.js</span></span><br><span class="line"><span class="keyword">import</span> &#123; throttle &#125; <span class="keyword">from</span> <span class="string">&#x27;lodash-es&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> baseSize = <span class="number">14</span></span><br><span class="line"><span class="keyword">let</span> htmlFontSize</span><br><span class="line">!(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> calc = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 这里限制根字体在14~18之间，太小太大不好看</span></span><br><span class="line">        <span class="keyword">const</span> maxFontSize = <span class="number">18</span></span><br><span class="line">        <span class="keyword">const</span> minFontSize = <span class="number">14</span></span><br><span class="line">        <span class="keyword">const</span> html = <span class="built_in">document</span>.getElementsByTagName(<span class="string">&#x27;html&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">const</span> width = html.clientWidth</span><br><span class="line">        <span class="comment">// 1440为设计搞尺寸，这里计算变换后的根字体尺寸</span></span><br><span class="line">        <span class="keyword">let</span> size = baseSize * (width / <span class="number">1440</span>)</span><br><span class="line">        size = <span class="built_in">Math</span>.min(maxFontSize, size)</span><br><span class="line">        size = <span class="built_in">Math</span>.max(minFontSize, size)</span><br><span class="line">        html.style.fontSize = size + <span class="string">&#x27;px&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">    calc()</span><br><span class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">&#x27;resize&#x27;</span>, throttle(calc(), <span class="number">500</span>))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="third" style="display:block"></h2>
-
-<h2 id="3-Vue按需导入Element-UI组件"><a href="#3-Vue按需导入Element-UI组件" class="headerlink" title="3.Vue按需导入Element-UI组件"></a>3.Vue按需导入Element-UI组件</h2><p>使用<code>babel-plugin-component</code>插件进行插件管理<br>安装<code>babel-plugin-component</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -D babel-plugin-component</span><br></pre></td></tr></table></figure>
-<p>安装<code>element-ui</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i element-ui</span><br></pre></td></tr></table></figure>
-<p>在<code>babel.config.js</code>中添加配置<code>element-ui</code>插件</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">plugin: [</span><br><span class="line">    [</span><br><span class="line">        <span class="string">&#x27;component&#x27;</span>,</span><br><span class="line">            &#123;</span><br><span class="line">                libraryName: <span class="string">&#x27;element-ui&#x27;</span>,</span><br><span class="line">                styleLibraryName: <span class="string">&#x27;theme-chalk&#x27;</span></span><br><span class="line">            &#125;</span><br><span class="line">    ]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<p>接着就可以按需加载element-ui组件</p>
+<h3 id="2-typeof运算符"><a href="#2-typeof运算符" class="headerlink" title="2.typeof运算符"></a>2.typeof运算符</h3><p>可以确定一个值的类型，同样的方法有<code>instanceof</code>运算符、<code>Object.prototype.toString</code>方法.</p>
+<h3 id="3-数值相关全局方法"><a href="#3-数值相关全局方法" class="headerlink" title="3.数值相关全局方法"></a>3.数值相关全局方法</h3><ul>
+<li>parseInt() 用于将字符串转换成数字</li>
+<li>parseFloat() 将字符串转换成浮点数</li>
+<li>isNaN() 判断值是否为NaN</li>
+<li>isFinite() 表示某个值是否为正常的数值</li>
+</ul>
 
     
 
@@ -262,7 +244,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://uyc.gitee.io/2020/08/10/tech-notes/cloudmusic-note0/" title="音乐播放器项目知识点(0)" target="_blank">https://uyc.gitee.io/2020/08/10/tech-notes/cloudmusic-note0/</a>
+          <a href="https://uyc.gitee.io/2020/08/22/tech-notes/JavaScript/js-notes/" title="JavaScript知识点小记(未完)" target="_blank">https://uyc.gitee.io/2020/08/22/tech-notes/JavaScript/js-notes/</a>
         </li>
         
         <li>
@@ -284,15 +266,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Element-UI</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">postcss-pxtorem</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		
 		</ul>
@@ -359,7 +333,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://uyc.gitee.io/2020/08/10/tech-notes/cloudmusic-note0/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://uyc.gitee.io/2020/08/22/tech-notes/JavaScript/js-notes/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -374,15 +348,11 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/08/20/personal-notes/from-a-calm-tomorrow/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          来自风平浪静的明天
-        
-      </div>
-    </a>
   
+    <a href="/2020/08/21/tech-notes/cloudmusic/cloudmusic-note1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">音乐播放器项目知识点(1)</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -407,7 +377,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#first"><span class="toc-number">1.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Vue%E6%89%B9%E9%87%8F%E6%B3%A8%E5%86%8C%E7%BB%84%E4%BB%B6"><span class="toc-number">2.</span> <span class="toc-text">1.Vue批量注册组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#second"><span class="toc-number">3.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E7%A7%BB%E5%8A%A8%E7%AB%AF%E9%80%82%E9%85%8D%E6%96%B9%E6%A1%88Rem"><span class="toc-number">4.</span> <span class="toc-text">2.移动端适配方案Rem</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#postcss-pxtorem%E6%8F%92%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">4.1.</span> <span class="toc-text">postcss-pxtorem插件的使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#third"><span class="toc-number">5.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Vue%E6%8C%89%E9%9C%80%E5%AF%BC%E5%85%A5Element-UI%E7%BB%84%E4%BB%B6"><span class="toc-number">6.</span> <span class="toc-text">3.Vue按需导入Element-UI组件</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#js%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">js数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text">1.简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-typeof%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.2.</span> <span class="toc-text">2.typeof运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%95%B0%E5%80%BC%E7%9B%B8%E5%85%B3%E5%85%A8%E5%B1%80%E6%96%B9%E6%B3%95"><span class="toc-number">1.3.</span> <span class="toc-text">3.数值相关全局方法</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -431,9 +401,9 @@
     <script src="/lib/giteement.browser.js"></script>
   
   <script>
-  <!-- id: "音乐播放器项目知识点(0)" -->
+  <!-- id: "JavaScript知识点小记(未完)" -->
   var giteement = new Giteement({
-    id: '20200810193000',
+    id: '20200822202300',
     owner: 'uyc',
     repo: 'uyc',
     backcall_uri: 'https://uyc.gitee.io',
@@ -578,6 +548,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Vue</a>
               </li>
              
@@ -587,10 +561,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">postcss-pxtorem</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
