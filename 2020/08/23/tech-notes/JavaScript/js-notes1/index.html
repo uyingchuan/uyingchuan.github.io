@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://uyc.gitee.io">
-  <title>Tag: JavaScript | 小u</title>
+  <title>JavaScript知识点小记(1) | 小u</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="u影川, web前端, blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小u">
-<meta property="og:url" content="https://uyc.gitee.io/tags/JavaScript/index.html">
+  <meta name="description" content="1.数组静态方法 Array.isArray() :辨别是否是数组，弥补typeof运算符的不足">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript知识点小记(1)">
+<meta property="og:url" content="https://uyc.gitee.io/2020/08/23/tech-notes/JavaScript/js-notes1/index.html">
 <meta property="og:site_name" content="小u">
-<meta property="og:description" content="u影川, web前端, blog">
+<meta property="og:description" content="1.数组静态方法 Array.isArray() :辨别是否是数组，弥补typeof运算符的不足">
 <meta property="og:locale">
+<meta property="article:published_time" content="2020-08-23T13:06:00.000Z">
+<meta property="article:modified_time" content="2020-08-24T06:35:43.019Z">
 <meta property="article:author" content="u影川">
-<meta property="article:tag" content="u影川, web前端开发, vue">
+<meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="小u" type="application/atom+xml">
@@ -183,95 +185,127 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-tech-notes/JavaScript/js-notes1" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/24/tech-notes/JavaScript/js-notes2/" class="archive-article-date">
-        <time datetime="2020-08-24T06:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-24</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/24/tech-notes/JavaScript/js-notes2/">JavaScript知识点小记(2)</a>
-	
+    <h1 class="article-title" itemprop="name">
+      JavaScript知识点小记(1)
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/tech-notes//" class="article-tag-list-link color1">tech-notes</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2020/08/23/tech-notes/JavaScript/js-notes1/" class="archive-article-date">
         <time datetime="2020-08-23T13:06:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-23</time>
 </a>
 
-        </div>
-    	 
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/23/tech-notes/JavaScript/js-notes1/">JavaScript知识点小记(1)</a>
-	
-    </h1>
   
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="1-数组静态方法"><a href="#1-数组静态方法" class="headerlink" title="1.数组静态方法"></a>1.数组静态方法</h3><ul>
+<li>Array.isArray() :辨别是否是数组，弥补typeof运算符的不足</li>
+</ul>
+<a id="more"></a>
 
+<h3 id="2-数组实例方法"><a href="#2-数组实例方法" class="headerlink" title="2.数组实例方法"></a>2.数组实例方法</h3><ul>
+<li>push()<br>往数组后面添加元素</li>
+<li>pop()<br>删除数组最后一个元素并返回该元素</li>
+<li>shift()<br>删除数组第一个元素并返回</li>
+<li>unshift()<br>在数组第一个位置添加元素并返回新数组长度</li>
+<li>join()<br>以参数作为分隔符将所有元素拼接成字符串，无参用逗号</li>
+<li>concat()<br>用于多数组的合并，原数组不变</li>
+<li>reverse()<br>颠倒数组排列并返回颠倒后的数组</li>
+<li>slice()<br>提取数组中的一部分，返回新数组，原数组不变</li>
+<li>splice()<br>用新元素替换原数组的一部分，返回被删除的元素</li>
+<li>sort()<br>排序<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">1</span>].sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b)</span><br></pre></td></tr></table></figure></li>
+<li>map()<br>遍历数组，返回值组成新数组，原数组不变</li>
+<li>forEach()<br>遍历数组，操作数据，无法中断，没返回值</li>
+<li>filter()<br>过滤，满足条件的组成新数组返回，原数组不变</li>
+<li>some(), every()<br>判断数组成员是否满足某个条件，前者some满足即true，后者需every</li>
+<li>reduce(), reduceRight()<br>依次处理数组成员，最终累计成一个值，前者左开头，后者右开头</li>
+<li>indexOf(), lastIndexOf()<br>返回元素出现的位置，前者为第一次出现的位置，后者为最后一次出现的位置</li>
+</ul>
+<h3 id="3-String实例方法"><a href="#3-String实例方法" class="headerlink" title="3.String实例方法"></a>3.String实例方法</h3><ul>
+<li>String.prototype.concat() :拼接</li>
+<li>String.prototype.slice() :取值</li>
+<li>String。prototype.substring :取值(建议使用slice)</li>
+<li>String.prototype.substr() :取值(第二个参数不是结束位，而是取值长度)</li>
+<li>String.prototype.indexOf, String.prototype.lastIndexOf() :同数组</li>
+<li>String.prototype.trim() :去除两端空格，不变原数组</li>
+<li>String.prototype.toLowerCase(), toUpperCase() :全体大小写，不变原数组</li>
+<li>String.prototype.match() :匹配子字符串，可正则</li>
+<li>String.prototype.search(), replace() :可正则</li>
+<li>String.prototype.split() :按参数分割字符串 可正则</li>
+<li>String.prototype.localCompare() :比大小(奇怪的东西)</li>
+</ul>
+<h3 id="4-Math静态方法"><a href="#4-Math静态方法" class="headerlink" title="4.Math静态方法"></a>4.Math静态方法</h3><ul>
+<li>Math.abs() :绝对值</li>
+<li>Math.ceil() :向上取整</li>
+<li>Math.floor() :向下取整</li>
+<li>Math.max() :最大值</li>
+<li>Math.min() :最小值</li>
+<li>Math.pow() :幂运算</li>
+<li>Math.sqrt() :平方根</li>
+<li>Math.log() :自然对数</li>
+<li>Math.exp() :e 的指数</li>
+<li>Math.round() :四舍五入</li>
+<li>Math.random() :随机数</li>
+<li>三角函数方法</li>
+</ul>
+<h3 id="5-Date静态方法"><a href="#5-Date静态方法" class="headerlink" title="5.Date静态方法"></a>5.Date静态方法</h3><ul>
+<li>Date.now() :返回距离时间零点的毫秒数</li>
+<li>Date.parse() :返回字符串参数时间距离零点的毫秒数</li>
+<li>Date.UTC() :返回参数UTC标准距离零点的毫秒数</li>
+</ul>
+<h3 id="6-Date实例方法"><a href="#6-Date实例方法" class="headerlink" title="6.Date实例方法"></a>6.Date实例方法</h3><p>大致可分三类：</p>
+<ol>
+<li>to类: 从Date对象返回一个字符串，表示特定的时间</li>
+<li>get类: 获取Date对象的日期和时间</li>
+<li>set类: 设置Date对象的日期和时间</li>
+</ol>
 
-        <div class="article-info info-on-right">
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          u影川
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://uyc.gitee.io/2020/08/23/tech-notes/JavaScript/js-notes1/" title="JavaScript知识点小记(1)" target="_blank">https://uyc.gitee.io/2020/08/23/tech-notes/JavaScript/js-notes1/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -283,7 +317,7 @@
 		</ul>
 	</div>
 
-          
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -296,133 +330,151 @@
 	</div>
 
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://uyc.gitee.io/2020/08/23/tech-notes/JavaScript/js-notes1/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/22/tech-notes/JavaScript/js-notes0/" class="archive-article-date">
-        <time datetime="2020-08-22T12:23:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-22</time>
-</a>
 
+
+<nav id="article-nav">
+  
+    <a href="/2020/08/24/tech-notes/JavaScript/js-notes2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          JavaScript知识点小记(2)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/08/22/tech-notes/JavaScript/js-notes0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JavaScript知识点小记(0)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/22/tech-notes/JavaScript/js-notes0/">JavaScript知识点小记(0)</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/tech-notes//" class="article-tag-list-link color1">tech-notes</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%95%B0%E7%BB%84%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">1.数组静态方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%95%B0%E7%BB%84%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">2.数组实例方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-String%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">3.String实例方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Math%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">4.Math静态方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-Date%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95"><span class="toc-number">5.</span> <span class="toc-text">5.Date静态方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-Date%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95"><span class="toc-number">6.</span> <span class="toc-text">6.Date实例方法</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+  <div id="giteement-ctn"></div>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/21/tech-notes/cloudmusic/cloudmusic-note1/" class="archive-article-date">
-        <time datetime="2020-08-21T08:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-21</time>
-</a>
-
-        </div>
-    	 
+    <link rel="stylesheet" href="/lib/default.css">
+    <script src="/lib/giteement.browser.js"></script>
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/21/tech-notes/cloudmusic/cloudmusic-note1/">音乐播放器项目知识点(1)</a>
-	
-    </h1>
-  
+  <script>
+  <!-- id: "JavaScript知识点小记(1)" -->
+  var giteement = new Giteement({
+    id: '20200823210600',
+    owner: 'uyc',
+    repo: 'uyc',
+    backcall_uri: 'https://uyc.gitee.io',
+    oauth_uri: 'https://cors-anywhere.herokuapp.com/https://gitee.com/oauth/token',
+    oauth: {
+      client_id: '179f8380ada5e89c7c36a598c03aa78a5b4946610f2c8abc034e84ffe8f25c0d',
+      client_secret: '3ec14b3c9acddbc6c58192689006d5099fbd5fb631fe64484d24f6b9449855ed'
+    },
+  })
+  giteement.render('giteement-ctn')
+  </script>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue-lazyload</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/tech-notes//" class="article-tag-list-link color1">tech-notes</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
 
 
           </div>
@@ -454,9 +506,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
