@@ -6,7 +6,7 @@
   <link href="https://uyc.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://uyc.gitee.io/"/>
-  <updated>2020-08-24T09:16:16.796Z</updated>
+  <updated>2020-08-25T07:12:30.324Z</updated>
   <id>https://uyc.gitee.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://uyc.gitee.io/2020/08/24/tech-notes/JavaScript/js-notes2/"/>
     <id>https://uyc.gitee.io/2020/08/24/tech-notes/JavaScript/js-notes2/</id>
     <published>2020-08-24T06:36:00.000Z</published>
-    <updated>2020-08-24T09:16:16.796Z</updated>
+    <updated>2020-08-25T07:12:30.324Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="RegExp对象"><a href="#RegExp对象" class="headerlink" title="RegExp对象"></a>RegExp对象</h3><a id="more"></a><ol><li><p>实例属性</p><ul><li>RegExp.prototype.ignoreCase :是否设置i</li><li>RegExp.prototype.global :是否设置g</li><li>RegExp.prototype.multiline :是否设置m</li><li>RegExp.prototype.flags :返回设置的修饰符的字符串  </li><li>RegExp.prototype.lastIndex :返回整数，表示下一次搜索的开始位置</li><li>RegExp.prototype.source :返回正则的字符串形式，只读</li></ul></li><li><p>实例方法</p><ul><li>RegExp.prototype.test() :是否可以匹配</li><li>RegExp.prototype.exec() :返回匹配结果</li><li>字符串的那几个实力方法可以应用正则 取得较好的用处</li></ul></li></ol>]]></content>
+    <content type="html"><![CDATA[<h3 id="RegExp对象"><a href="#RegExp对象" class="headerlink" title="RegExp对象"></a>RegExp对象</h3><a id="more"></a><ol><li><p>实例属性</p><ul><li>RegExp.prototype.ignoreCase :是否设置i</li><li>RegExp.prototype.global :是否设置g</li><li>RegExp.prototype.multiline :是否设置m</li><li>RegExp.prototype.flags :返回设置的修饰符的字符串  </li><li>RegExp.prototype.lastIndex :返回整数，表示下一次搜索的开始位置</li><li>RegExp.prototype.source :返回正则的字符串形式，只读</li></ul></li><li><p>实例方法</p><ul><li>RegExp.prototype.test() :是否可以匹配</li><li>RegExp.prototype.exec() :返回匹配结果</li><li>字符串的那几个实力方法可以应用正则 取得较好的用处</li></ul></li><li><p>元字符</p><ul><li>点字符 (.)除换行空格什么的外匹配任意一个字符</li><li>位置字符 (^, &amp;)前者表示开头位置，后者表示结束位置</li><li>选择符 (|)或关系</li><li>转义符，反斜杠，元字符匹配需要前面加上反斜杠</li></ul></li></ol><h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3><p><code>JSON</code>格式是一种用于数据交换的格式，取代繁重的<code>xml</code><br><code>JSON</code>对象是<code>js</code>原生对象<br><code>JSON.stringify()</code>方法用于将一个值转换成JSON字符串<br><code>JSON.parse()</code>方法用于将JSON字符串转换成值</p>]]></content>
     
     
     <summary type="html">&lt;h3 id=&quot;RegExp对象&quot;&gt;&lt;a href=&quot;#RegExp对象&quot; class=&quot;headerlink&quot; title=&quot;RegExp对象&quot;&gt;&lt;/a&gt;RegExp对象&lt;/h3&gt;</summary>
