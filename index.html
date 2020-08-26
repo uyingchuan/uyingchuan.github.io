@@ -224,107 +224,9 @@
   <div class="article-entry" itemprop="articleBody">
     
     <h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><h2 id="Document节点"><a href="#Document节点" class="headerlink" title="Document节点"></a>Document节点</h2><p><code>Document</code>节点代表整个文档</p>
-<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><h4 id="快捷方式属性"><a href="#快捷方式属性" class="headerlink" title="快捷方式属性"></a>快捷方式属性</h4><ol>
-<li><p>document.defaultView<br>返回<code>document</code>对象所属的<code>window</code>对象</p>
-</li>
-<li><p>document.doctype  </p>
-</li>
-<li><p>document.documentElement<br>返回当前文档的根元素节点，一般是<code>&lt;html&gt;</code></p>
-</li>
-<li><p>document.head, body</p>
-</li>
-<li><p>document.scrollingElement<br>返回文档的滚动元素，标准模式为<code>&lt;html&gt;</code>，兼容模式为<code>&lt;body&gt;</code></p>
-</li>
-<li><p>document.activeElement<br>返回获得当前焦点（focus）的DOM元素，没交点返回<code>&lt;body&gt;</code>元素或<code>null</code></p>
-</li>
-<li><p>document.fullscreenElement<br>返回当前以全屏状态展示的DOM元素</p>
-</li>
-</ol>
-<h4 id="节点集合属性"><a href="#节点集合属性" class="headerlink" title="节点集合属性"></a>节点集合属性</h4><ol>
-<li><p>document.links<br>返回当前文档所有设定了<code>href</code>属性的<code>&lt;a&gt;</code>及<code>&lt;area&gt;</code>节点</p>
-</li>
-<li><p>document.forms<br>返回所有<code>&lt;form&gt;</code>表单节点</p>
-</li>
-<li><p>document.images<br>返回页面所有<code>&lt;img&gt;</code>图片节点</p>
-</li>
-<li><p>document.embeds, document.plugins<br>都返回所有的<code>&lt;embed&gt;</code>节点</p>
-</li>
-<li><p>document.scripts<br>返回所有的<code>&lt;script&gt;</code>节点</p>
-</li>
-<li><p>document.styleSheets<br>返回所有文档内嵌或引入的样式表集合，<code>注：</code>只有这个返回不是<code>HTMLCollection</code>实例</p>
-</li>
-</ol>
-<h4 id="文档静态信息属性"><a href="#文档静态信息属性" class="headerlink" title="文档静态信息属性"></a>文档静态信息属性</h4><ol>
-<li><p>document.documentURI, document.URL<br>都返回当前文档网址字符串，继承自不同的接口</p>
-</li>
-<li><p>document.domain<br>返回当前文档的域名</p>
-</li>
-<li><p>document.location<br>拿到浏览器提供的原生对象<code>Location</code></p>
-</li>
-<li><p>document.lastModified<br>文档最后修改的时间的字符串，格式随浏览器</p>
-</li>
-<li><p>document.title<br>文档标题，可读写</p>
-</li>
-<li><p>document.characterSet<br>文档编码</p>
-</li>
-<li><p>document.referrer<br>返回当前访问者来自哪个网址，无法获取则空字符串</p>
-</li>
-<li><p>document.dir<br>文字方向，左：<code>rtl</code>，右：<code>ltr</code></p>
-</li>
-<li><p>document.compatMode<br><code>BackCompat</code>(向后兼容)和<code>CSS1Compat</code>(严格模式)，一般设置明确的<code>DOCTYPE</code>，值都为严格模式</p>
-</li>
-</ol>
-<h4 id="文档状态属性"><a href="#文档状态属性" class="headerlink" title="文档状态属性"></a>文档状态属性</h4><ol>
-<li><p>document.hidden<br>当前页面窗口是否可见</p>
-</li>
-<li><p>document.visibilityState<br>当前文档的可见状态，四种状态，visible hidden prerender<br>unloaded</p>
-</li>
-<li><p>document.readyState<br>当前文档的加载状态，三种值</p>
-</li>
-</ol>
-<h4 id="document-cookie"><a href="#document-cookie" class="headerlink" title="document.cookie"></a>document.cookie</h4><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ol>
-<li><p>document.open(), close()<br>可写状态</p>
-</li>
-<li><p>document.write(), document.writeIn()<br>写入内容，后者会自行转行</p>
-</li>
-<li><p>document.querySelector(), document.querySelectorAll()<br>使用CSS选择器匹配元素节点，不支持伪元素选择器,后者返回<code>NodeList</code>对象</p>
-</li>
-<li><p>document.getElementsByTagName()<br>标签名匹配节点，返回<code>HTMLCollection</code>对象</p>
-</li>
-<li><p>document.getElementsByClassName()<br>按className匹配节点，返回<code>HTMLCollection</code>实例</p>
-</li>
-<li><p>document.getElementsByName()<br>根据<code>name</code>属性匹配HTML元素，返回<code>NodeList</code>实例</p>
-</li>
-<li><p>document.getElementById()<br>根据<code>id</code>匹配元素节点</p>
-</li>
-<li><p>document.createElement()<br>生成并返回元素节点，标签名可自定义</p>
-</li>
-<li><p>document.createTextNode()<br>生成并返回文本节点</p>
-</li>
-<li><p>document.createAttribute()<br>生成并返回属性节点</p>
-</li>
-<li><p>document.createComment()<br>生成并返回注释节点</p>
-</li>
-<li><p>document.createDocumentFragment()<br><code>DocumentFragment</code>是存在于内存当中的DOM片段，不属于当前文档，常用于生成一段较为复杂的DOM结构，再插入到当前文档，这样的好处是对他的改动不会触发网页的重新渲染。</p>
-</li>
-<li><p>document.createEvent()<br>生成并返回一个<code>Event</code>实例</p>
-</li>
-<li><p>document.addEventListener(), removeEventListener(), dispatchEvent()<br>继承自<code>EventTarget</code>接口，用于处理<code>document</code>节点的事件</p>
-</li>
-<li><p>document.hasFocus()<br>文档之间是否有元素被激活或获得焦点</p>
-</li>
-<li><p>document.adoptNode(), importNode<br>前者移除后者拷贝，从一个文档或片段将节点转移到当前文档</p>
-</li>
-<li><p>document.createNodeIterator()<br>返回body元素子节点的遍历器</p>
-</li>
-<li><p>document.createTreeWalker()<br>返回DOM的子树遍历器</p>
-</li>
-<li><p>document.execCommand()，document.queryCommandSupported()，document.queryCommandEnabled()  </p>
-</li>
-<li><p>document.getSelection()<br>指向<code>window.getSelection()</code></p>
-</li>
-</ol>
-
+    
+    <a class="article-more-a" href="/2020/08/26/tech-notes/JavaScript/js-notes5/#more">more >></a>
+    
     
 
     
@@ -427,125 +329,9 @@
 <li>DocumentFragment: 文档的片段</li>
 </ul>
 <p>浏览器提供一个原生节点对象<code>Node</code>，上面其中节点都继承了<code>Node</code></p>
-<h3 id="二-Node接口"><a href="#二-Node接口" class="headerlink" title="二.Node接口"></a>二.Node接口</h3><h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><ol>
-<li><p>Node.prototype.nodeType</p>
-<ul>
-<li>文档节点（document）：9，对应常量Node.DOCUMENT_NODE</li>
-<li>元素节点（element）：1，对应常量Node.ELEMENT_NODE</li>
-<li>属性节点（attr）：2，对应常量Node.ATTRIBUTE_NODE</li>
-<li>文本节点（text）：3，对应常量Node.TEXT_NODE</li>
-<li>文档片断节点（DocumentFragment）：11，对应常量Node.DOCUMENT_FRAGMENT_NODE</li>
-<li>文档类型节点（DocumentType）：10，对应常量Node.DOCUMENT_TYPE_NODE</li>
-<li>注释节点（Comment）：8，对应常量Node.COMMENT_NODE</li>
-</ul>
-</li>
-<li><p>Node.prototype.nodeName</p>
-<ul>
-<li>文档节点（document）：#document</li>
-<li>元素节点（element）：大写的标签名</li>
-<li>属性节点（attr）：属性的名称</li>
-<li>文本节点（text）：#text</li>
-<li>文档片断节点（DocumentFragment）：#document-fragment</li>
-<li>文档类型节点（DocumentType）：文档的类型</li>
-<li>注释节点（Comment）：#comment</li>
-</ul>
-</li>
-<li><p>Node.prototype.nodeValue<br>只有文本节点，注释节点，属性节点有文本值</p>
-</li>
-<li><p>Node.prototype.textContent<br>返回当前节点和后代节点的所有文本内容</p>
-</li>
-<li><p>Node.prototype.baseUrl<br>返回当前网页绝对路径的字符串，只读</p>
-</li>
-<li><p>Node.prototype.ownerDocument<br>返回当前节点所在的顶层文档对象，即<code>document</code></p>
-</li>
-<li><p>Node.prototype.nextSibling<br>返回后一个兄弟节点，包含文本节点和注释节点</p>
-</li>
-<li><p>Node.prototype.previousSibling<br>返回前一个兄弟节点</p>
-</li>
-<li><p>Node.prototype.parentNode<br>返回当前节点的父节点，三种可能，元素节点，文档节点，文档片段节点</p>
-</li>
-<li><p>Node.prototype.parentElement<br>返回当前节点的父元素节点</p>
-</li>
-<li><p>Node.prototype.firstChild, lastChild<br>返回当前节点的第一个与最后一个子节点，包含元素，文本注释节点</p>
-</li>
-<li><p>Node.prototype.childNodes<br>返回当前节点所有子节点组成的类数组对象</p>
-</li>
-<li><p>Node.prototype.isConnected<br>表示当前节点是否在文档之中</p>
-</li>
-<li><p>Node.prototype.</p>
-</li>
-</ol>
-<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><ol>
-<li><p>Node.prototype.appendChild()<br>将参数节点插入某节点，返回值为参数节点</p>
-</li>
-<li><p>Node.prototype.hasChildNodes()<br>是否有子节点</p>
-</li>
-<li><p>Node.prototype.cloneNode(true)<br>克隆出一个节点，参数true表示同时克隆子节点，返回值新节点</p>
-</li>
-<li><p>Node.prototype.insertBefore(newCode, referenceNode)<br>将节点插入父节点内部的指定位置,返回插入的新结点</p>
-</li>
-<li><p>Node.prototype.removeChild()<br>从当前节点移除指定的节点，返回移除的子节点</p>
-</li>
-<li><p>Node.prototype.replaceChild(newChild, oldChild)<br>替换节点</p>
-</li>
-<li><p>Node.prototype.contains()</p>
-<ul>
-<li>参数节点为当前节点返回true</li>
-<li>参数节点为当前节点子节点返回true</li>
-<li>参数节点为当前节点后代节点返回true</li>
-</ul>
-</li>
-<li><p>Node.prototype.compareDocumentPosition()  </p>
-<ul>
-<li>0 表示两个节点相同</li>
-<li>1 不在同一个文档</li>
-<li>2 参数节点在当前节点前面</li>
-<li>4 在后面</li>
-<li>8 参数节点包含当前节点</li>
-<li>16 当前节点包含参数节点</li>
-<li>32 浏览器内部使用</li>
-</ul>
-</li>
-<li><p>Node.prototype.isEqualNode(), isSameNode()<br>检查两个节点是否相等；检查两个节点是否为同一个节点</p>
-</li>
-<li><p>Node.prototype.normalize()<br>清理当前节点内部的所有文本节点</p>
-</li>
-<li><p>Node.prototype.getRootNode()<br>字如其名，与<code>getOwnerDocument</code>相比可以获取<code>document</code>节点根节点不是<code>null</code>而是<code>document</code></p>
-</li>
-</ol>
-<h3 id="三-NodeList接口与HTMLCollection接口"><a href="#三-NodeList接口与HTMLCollection接口" class="headerlink" title="三.NodeList接口与HTMLCollection接口"></a>三.NodeList接口与HTMLCollection接口</h3><h4 id="NodeList接口"><a href="#NodeList接口" class="headerlink" title="NodeList接口"></a>NodeList接口</h4><p><code>NodeList</code>是一个类数组对象，可以通过以下方法获得</p>
-<ul>
-<li>Node.childNodes</li>
-<li>document.querySelectorAll()</li>
-</ul>
-<h5 id="实例属性方法"><a href="#实例属性方法" class="headerlink" title="实例属性方法"></a>实例属性方法</h5><ol>
-<li><p>NodeList.prototype.length()<br>返回实例包含的节点数量</p>
-</li>
-<li><p>NodeList.prototype.forEach()<br>遍历</p>
-</li>
-<li><p>NodeList.prototype.keys(), values(), entries()<br>返回ES6的遍历器对象，可以通过for…of循环获取</p>
-</li>
-</ol>
-<h4 id="HTMLCollection接口"><a href="#HTMLCollection接口" class="headerlink" title="HTMLCollection接口"></a>HTMLCollection接口</h4><p>节点对象的集合，只包含元素节点，只能用<code>for</code>循环遍历，只读，动态。<br>返回<code>HTMLCollection</code>实例的主要是<code>Document</code>对象的集合属性</p>
-<h3 id="ParentNode接口和ChildNode接口"><a href="#ParentNode接口和ChildNode接口" class="headerlink" title="ParentNode接口和ChildNode接口"></a>ParentNode接口和ChildNode接口</h3><h4 id="ParentNode接口"><a href="#ParentNode接口" class="headerlink" title="ParentNode接口"></a>ParentNode接口</h4><ol>
-<li><p>ParentNode.children<br>返回一个<code>HTMLCollection</code>实例，包含当前节点的所有子元素节点</p>
-</li>
-<li><p>ParentNode.firstElementChild, lastElementChild<br>返回当前节点的第一个子元素节点；最后一个</p>
-</li>
-<li><p>ParentNode.childElementCount<br>返回当前节点的所有元素子节点对象的数量</p>
-</li>
-<li><p>ParentNode.append(), ParentNode.prepend()<br>在当前节点的最后一个元素子节点后面/第一个元素子节点前面追加一个或多个子节点</p>
-</li>
-</ol>
-<h4 id="ChildNode接口"><a href="#ChildNode接口" class="headerlink" title="ChildNode接口"></a>ChildNode接口</h4><ol>
-<li><p>ChildNode.remove()<br>从父结点移除当前节点</p>
-</li>
-<li><p>ChildNode.before(), after()<br>在当前节点的前面/后面添加兄弟节点</p>
-</li>
-<li><p>ChildNode.replaceWith()<br>用参数节点替换当前节点</p>
-</li>
-</ol>
-
+    
+    <a class="article-more-a" href="/2020/08/26/tech-notes/JavaScript/js-notes4/#more">more >></a>
+    
     
 
     
@@ -738,7 +524,17 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h3 id="RegExp对象"><a href="#RegExp对象" class="headerlink" title="RegExp对象"></a>RegExp对象</h3>
+    <h3 id="RegExp对象"><a href="#RegExp对象" class="headerlink" title="RegExp对象"></a>RegExp对象</h3><ol>
+<li>实例属性<ul>
+<li>RegExp.prototype.ignoreCase :是否设置i</li>
+<li>RegExp.prototype.global :是否设置g</li>
+<li>RegExp.prototype.multiline :是否设置m</li>
+<li>RegExp.prototype.flags :返回设置的修饰符的字符串  </li>
+<li>RegExp.prototype.lastIndex :返回整数，表示下一次搜索的开始位置</li>
+<li>RegExp.prototype.source :返回正则的字符串形式，只读</li>
+</ul>
+</li>
+</ol>
     
     <a class="article-more-a" href="/2020/08/24/tech-notes/JavaScript/js-notes2/#more">more >></a>
     
