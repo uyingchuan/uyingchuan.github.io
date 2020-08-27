@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://uyc.gitee.io">
-  <title>Tag: JavaScript | 小u</title>
+  <title>JavaScript知识点小记(4) | 小u</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="u影川, web前端, blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小u">
-<meta property="og:url" content="https://uyc.gitee.io/tags/JavaScript/index.html">
+  <meta name="description" content="DOM一.DOM节点 Document: 文档顶层节点 DocumentType: doctype标签 Element: 网页各种HTML标签 Attr: 网页元素的属性 Text: 标签之间或标签包含的文本 Comment: 注释 DocumentFragment: 文档的片段  浏览器提供一个原生节点对象Node，上面其中节点都继承了Node">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript知识点小记(4)">
+<meta property="og:url" content="https://uyc.gitee.io/2020/08/26/personal-notes/JavaScript/js-notes4/index.html">
 <meta property="og:site_name" content="小u">
-<meta property="og:description" content="u影川, web前端, blog">
+<meta property="og:description" content="DOM一.DOM节点 Document: 文档顶层节点 DocumentType: doctype标签 Element: 网页各种HTML标签 Attr: 网页元素的属性 Text: 标签之间或标签包含的文本 Comment: 注释 DocumentFragment: 文档的片段  浏览器提供一个原生节点对象Node，上面其中节点都继承了Node">
 <meta property="og:locale">
+<meta property="article:published_time" content="2020-08-26T06:09:00.000Z">
+<meta property="article:modified_time" content="2020-08-27T08:50:10.370Z">
 <meta property="article:author" content="u影川">
-<meta property="article:tag" content="u影川, web前端开发, vue">
+<meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="小u" type="application/atom+xml">
@@ -183,95 +185,196 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-personal-notes/JavaScript/js-notes4" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/26/personal-notes/JavaScript/js-notes5/" class="archive-article-date">
-        <time datetime="2020-08-26T09:09:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-26</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/26/personal-notes/JavaScript/js-notes5/">JavaScript知识点小记(5)</a>
-	
+    <h1 class="article-title" itemprop="name">
+      JavaScript知识点小记(4)
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/personal-notes//" class="article-tag-list-link color5">personal-notes</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2020/08/26/personal-notes/JavaScript/js-notes4/" class="archive-article-date">
         <time datetime="2020-08-26T06:09:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-26</time>
 </a>
 
-        </div>
-    	 
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/26/personal-notes/JavaScript/js-notes4/">JavaScript知识点小记(4)</a>
-	
-    </h1>
   
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><h3 id="一-DOM节点"><a href="#一-DOM节点" class="headerlink" title="一.DOM节点"></a>一.DOM节点</h3><ul>
+<li>Document: 文档顶层节点</li>
+<li>DocumentType: <code>doctype</code>标签</li>
+<li>Element: 网页各种HTML标签</li>
+<li>Attr: 网页元素的属性</li>
+<li>Text: 标签之间或标签包含的文本</li>
+<li>Comment: 注释</li>
+<li>DocumentFragment: 文档的片段</li>
+</ul>
+<p>浏览器提供一个原生节点对象<code>Node</code>，上面其中节点都继承了<code>Node</code></p>
+<a id="more"></a>
 
+<h3 id="二-Node接口"><a href="#二-Node接口" class="headerlink" title="二.Node接口"></a>二.Node接口</h3><h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><ol>
+<li><p>Node.prototype.nodeType</p>
+<ul>
+<li>文档节点（document）：9，对应常量Node.DOCUMENT_NODE</li>
+<li>元素节点（element）：1，对应常量Node.ELEMENT_NODE</li>
+<li>属性节点（attr）：2，对应常量Node.ATTRIBUTE_NODE</li>
+<li>文本节点（text）：3，对应常量Node.TEXT_NODE</li>
+<li>文档片断节点（DocumentFragment）：11，对应常量Node.DOCUMENT_FRAGMENT_NODE</li>
+<li>文档类型节点（DocumentType）：10，对应常量Node.DOCUMENT_TYPE_NODE</li>
+<li>注释节点（Comment）：8，对应常量Node.COMMENT_NODE</li>
+</ul>
+</li>
+<li><p>Node.prototype.nodeName</p>
+<ul>
+<li>文档节点（document）：#document</li>
+<li>元素节点（element）：大写的标签名</li>
+<li>属性节点（attr）：属性的名称</li>
+<li>文本节点（text）：#text</li>
+<li>文档片断节点（DocumentFragment）：#document-fragment</li>
+<li>文档类型节点（DocumentType）：文档的类型</li>
+<li>注释节点（Comment）：#comment</li>
+</ul>
+</li>
+<li><p>Node.prototype.nodeValue<br>只有文本节点，注释节点，属性节点有文本值</p>
+</li>
+<li><p>Node.prototype.textContent<br>返回当前节点和后代节点的所有文本内容</p>
+</li>
+<li><p>Node.prototype.baseUrl<br>返回当前网页绝对路径的字符串，只读</p>
+</li>
+<li><p>Node.prototype.ownerDocument<br>返回当前节点所在的顶层文档对象，即<code>document</code></p>
+</li>
+<li><p>Node.prototype.nextSibling<br>返回后一个兄弟节点，包含文本节点和注释节点</p>
+</li>
+<li><p>Node.prototype.previousSibling<br>返回前一个兄弟节点</p>
+</li>
+<li><p>Node.prototype.parentNode<br>返回当前节点的父节点，三种可能，元素节点，文档节点，文档片段节点</p>
+</li>
+<li><p>Node.prototype.parentElement<br>返回当前节点的父元素节点</p>
+</li>
+<li><p>Node.prototype.firstChild, lastChild<br>返回当前节点的第一个与最后一个子节点，包含元素，文本注释节点</p>
+</li>
+<li><p>Node.prototype.childNodes<br>返回当前节点所有子节点组成的类数组对象</p>
+</li>
+<li><p>Node.prototype.isConnected<br>表示当前节点是否在文档之中</p>
+</li>
+<li><p>Node.prototype.</p>
+</li>
+</ol>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><ol>
+<li><p>Node.prototype.appendChild()<br>将参数节点插入某节点，返回值为参数节点</p>
+</li>
+<li><p>Node.prototype.hasChildNodes()<br>是否有子节点</p>
+</li>
+<li><p>Node.prototype.cloneNode(true)<br>克隆出一个节点，参数true表示同时克隆子节点，返回值新节点</p>
+</li>
+<li><p>Node.prototype.insertBefore(newCode, referenceNode)<br>将节点插入父节点内部的指定位置,返回插入的新结点</p>
+</li>
+<li><p>Node.prototype.removeChild()<br>从当前节点移除指定的节点，返回移除的子节点</p>
+</li>
+<li><p>Node.prototype.replaceChild(newChild, oldChild)<br>替换节点</p>
+</li>
+<li><p>Node.prototype.contains()</p>
+<ul>
+<li>参数节点为当前节点返回true</li>
+<li>参数节点为当前节点子节点返回true</li>
+<li>参数节点为当前节点后代节点返回true</li>
+</ul>
+</li>
+<li><p>Node.prototype.compareDocumentPosition()  </p>
+<ul>
+<li>0 表示两个节点相同</li>
+<li>1 不在同一个文档</li>
+<li>2 参数节点在当前节点前面</li>
+<li>4 在后面</li>
+<li>8 参数节点包含当前节点</li>
+<li>16 当前节点包含参数节点</li>
+<li>32 浏览器内部使用</li>
+</ul>
+</li>
+<li><p>Node.prototype.isEqualNode(), isSameNode()<br>检查两个节点是否相等；检查两个节点是否为同一个节点</p>
+</li>
+<li><p>Node.prototype.normalize()<br>清理当前节点内部的所有文本节点</p>
+</li>
+<li><p>Node.prototype.getRootNode()<br>字如其名，与<code>getOwnerDocument</code>相比可以获取<code>document</code>节点根节点不是<code>null</code>而是<code>document</code></p>
+</li>
+</ol>
+<h3 id="三-NodeList接口与HTMLCollection接口"><a href="#三-NodeList接口与HTMLCollection接口" class="headerlink" title="三.NodeList接口与HTMLCollection接口"></a>三.NodeList接口与HTMLCollection接口</h3><h4 id="NodeList接口"><a href="#NodeList接口" class="headerlink" title="NodeList接口"></a>NodeList接口</h4><p><code>NodeList</code>是一个类数组对象，可以通过以下方法获得</p>
+<ul>
+<li>Node.childNodes</li>
+<li>document.querySelectorAll()</li>
+</ul>
+<h5 id="实例属性方法"><a href="#实例属性方法" class="headerlink" title="实例属性方法"></a>实例属性方法</h5><ol>
+<li><p>NodeList.prototype.length()<br>返回实例包含的节点数量</p>
+</li>
+<li><p>NodeList.prototype.forEach()<br>遍历</p>
+</li>
+<li><p>NodeList.prototype.keys(), values(), entries()<br>返回ES6的遍历器对象，可以通过for…of循环获取</p>
+</li>
+</ol>
+<h4 id="HTMLCollection接口"><a href="#HTMLCollection接口" class="headerlink" title="HTMLCollection接口"></a>HTMLCollection接口</h4><p>节点对象的集合，只包含元素节点，只能用<code>for</code>循环遍历，只读，动态。<br>返回<code>HTMLCollection</code>实例的主要是<code>Document</code>对象的集合属性</p>
+<h3 id="ParentNode接口和ChildNode接口"><a href="#ParentNode接口和ChildNode接口" class="headerlink" title="ParentNode接口和ChildNode接口"></a>ParentNode接口和ChildNode接口</h3><h4 id="ParentNode接口"><a href="#ParentNode接口" class="headerlink" title="ParentNode接口"></a>ParentNode接口</h4><ol>
+<li><p>ParentNode.children<br>返回一个<code>HTMLCollection</code>实例，包含当前节点的所有子元素节点</p>
+</li>
+<li><p>ParentNode.firstElementChild, lastElementChild<br>返回当前节点的第一个子元素节点；最后一个</p>
+</li>
+<li><p>ParentNode.childElementCount<br>返回当前节点的所有元素子节点对象的数量</p>
+</li>
+<li><p>ParentNode.append(), ParentNode.prepend()<br>在当前节点的最后一个元素子节点后面/第一个元素子节点前面追加一个或多个子节点</p>
+</li>
+</ol>
+<h4 id="ChildNode接口"><a href="#ChildNode接口" class="headerlink" title="ChildNode接口"></a>ChildNode接口</h4><ol>
+<li><p>ChildNode.remove()<br>从父结点移除当前节点</p>
+</li>
+<li><p>ChildNode.before(), after()<br>在当前节点的前面/后面添加兄弟节点</p>
+</li>
+<li><p>ChildNode.replaceWith()<br>用参数节点替换当前节点</p>
+</li>
+</ol>
 
-        <div class="article-info info-on-right">
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          u影川
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://uyc.gitee.io/2020/08/26/personal-notes/JavaScript/js-notes4/" title="JavaScript知识点小记(4)" target="_blank">https://uyc.gitee.io/2020/08/26/personal-notes/JavaScript/js-notes4/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -283,7 +386,7 @@
 		</ul>
 	</div>
 
-          
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -296,295 +399,151 @@
 	</div>
 
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://uyc.gitee.io/2020/08/26/personal-notes/JavaScript/js-notes4/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/25/personal-notes/JavaScript/js-notes3/" class="archive-article-date">
-        <time datetime="2020-08-25T07:38:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-25</time>
-</a>
 
+
+<nav id="article-nav">
+  
+    <a href="/2020/08/26/personal-notes/JavaScript/js-notes5/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          JavaScript知识点小记(5)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/08/25/personal-notes/JavaScript/js-notes3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JavaScript知识点小记(3)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/25/personal-notes/JavaScript/js-notes3/">JavaScript知识点小记(3)</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/personal-notes//" class="article-tag-list-link color5">personal-notes</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM"><span class="toc-number">1.</span> <span class="toc-text">DOM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80-DOM%E8%8A%82%E7%82%B9"><span class="toc-number">1.1.</span> <span class="toc-text">一.DOM节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C-Node%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.2.</span> <span class="toc-text">二.Node接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7"><span class="toc-number">1.2.1.</span> <span class="toc-text">属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.2.</span> <span class="toc-text">方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89-NodeList%E6%8E%A5%E5%8F%A3%E4%B8%8EHTMLCollection%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.3.</span> <span class="toc-text">三.NodeList接口与HTMLCollection接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#NodeList%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.3.1.</span> <span class="toc-text">NodeList接口</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%E5%B1%9E%E6%80%A7%E6%96%B9%E6%B3%95"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">实例属性方法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTMLCollection%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.3.2.</span> <span class="toc-text">HTMLCollection接口</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ParentNode%E6%8E%A5%E5%8F%A3%E5%92%8CChildNode%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.4.</span> <span class="toc-text">ParentNode接口和ChildNode接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ParentNode%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.4.1.</span> <span class="toc-text">ParentNode接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ChildNode%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.4.2.</span> <span class="toc-text">ChildNode接口</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+  <div id="giteement-ctn"></div>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/24/personal-notes/JavaScript/js-notes2/" class="archive-article-date">
-        <time datetime="2020-08-24T06:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-24</time>
-</a>
-
-        </div>
-    	 
+    <link rel="stylesheet" href="/lib/default.css">
+    <script src="/lib/giteement.browser.js"></script>
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/24/personal-notes/JavaScript/js-notes2/">JavaScript知识点小记(2)</a>
-	
-    </h1>
-  
+  <script>
+  <!-- id: "JavaScript知识点小记(4)" -->
+  var giteement = new Giteement({
+    id: '20200826140900',
+    owner: 'uyc',
+    repo: 'uyc',
+    backcall_uri: 'https://uyc.gitee.io',
+    oauth_uri: 'https://cors-anywhere.herokuapp.com/https://gitee.com/oauth/token',
+    oauth: {
+      client_id: '179f8380ada5e89c7c36a598c03aa78a5b4946610f2c8abc034e84ffe8f25c0d',
+      client_secret: '3ec14b3c9acddbc6c58192689006d5099fbd5fb631fe64484d24f6b9449855ed'
+    },
+  })
+  giteement.render('giteement-ctn')
+  </script>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/personal-notes//" class="article-tag-list-link color5">personal-notes</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/23/personal-notes/JavaScript/js-notes1/" class="archive-article-date">
-        <time datetime="2020-08-23T13:06:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-23</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/23/personal-notes/JavaScript/js-notes1/">JavaScript知识点小记(1)</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/personal-notes//" class="article-tag-list-link color5">personal-notes</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/22/personal-notes/JavaScript/js-notes0/" class="archive-article-date">
-        <time datetime="2020-08-22T12:23:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-22</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/22/personal-notes/JavaScript/js-notes0/">JavaScript知识点小记(0)</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/personal-notes//" class="article-tag-list-link color5">personal-notes</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/21/tech-notes/cloudmusic/cloudmusic-note1/" class="archive-article-date">
-        <time datetime="2020-08-21T08:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-21</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/21/tech-notes/cloudmusic/cloudmusic-note1/">音乐播放器项目知识点(1)</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue-lazyload</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/tech-notes//" class="article-tag-list-link color1">tech-notes</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -616,9 +575,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

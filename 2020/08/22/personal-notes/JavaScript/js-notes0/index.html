@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://uyc.gitee.io">
-  <title>JavaScript知识点小记(4) | 小u</title>
+  <title>JavaScript知识点小记(0) | 小u</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="DOM一.DOM节点 Document: 文档顶层节点 DocumentType: doctype标签 Element: 网页各种HTML标签 Attr: 网页元素的属性 Text: 标签之间或标签包含的文本 Comment: 注释 DocumentFragment: 文档的片段  浏览器提供一个原生节点对象Node，上面其中节点都继承了Node">
+  <meta name="description" content="1.数据类型JavaScript语言共6种数据类型（ES6新增Symbol类型，现提出第八种BigInt）  Number    (数值) String    (字符串) Boolean    (布尔值) Undefined   (未定义) Null    (空值) Object    (对象，包括数组、函数)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript知识点小记(4)">
-<meta property="og:url" content="https://uyc.gitee.io/2020/08/26/tech-notes/JavaScript/js-notes4/index.html">
+<meta property="og:title" content="JavaScript知识点小记(0)">
+<meta property="og:url" content="https://uyc.gitee.io/2020/08/22/personal-notes/JavaScript/js-notes0/index.html">
 <meta property="og:site_name" content="小u">
-<meta property="og:description" content="DOM一.DOM节点 Document: 文档顶层节点 DocumentType: doctype标签 Element: 网页各种HTML标签 Attr: 网页元素的属性 Text: 标签之间或标签包含的文本 Comment: 注释 DocumentFragment: 文档的片段  浏览器提供一个原生节点对象Node，上面其中节点都继承了Node">
+<meta property="og:description" content="1.数据类型JavaScript语言共6种数据类型（ES6新增Symbol类型，现提出第八种BigInt）  Number    (数值) String    (字符串) Boolean    (布尔值) Undefined   (未定义) Null    (空值) Object    (对象，包括数组、函数)">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-08-26T06:09:00.000Z">
-<meta property="article:modified_time" content="2020-08-26T12:29:25.257Z">
+<meta property="article:published_time" content="2020-08-22T12:23:00.000Z">
+<meta property="article:modified_time" content="2020-08-27T08:49:50.023Z">
 <meta property="article:author" content="u影川">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -79,7 +79,7 @@
 			
 				<li><a href="/categories/tech-notes/" >技术笔记</a></li>
 			
-				<li><a href="/categories/personal-notes/" >心情随笔</a></li>
+				<li><a href="/categories/essay/" >心情随笔</a></li>
 			
 			</ul>
 		</nav>
@@ -169,7 +169,7 @@
 		        
 					<li style="width: 33.333333333333336%"><a href="/categories/tech-notes/">技术笔记</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/categories/personal-notes/">心情随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/categories/essay/">心情随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -185,14 +185,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-tech-notes/JavaScript/js-notes4" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-personal-notes/JavaScript/js-notes0" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      JavaScript知识点小记(4)
+      JavaScript知识点小记(0)
     </h1>
   
 
@@ -204,8 +204,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/08/26/tech-notes/JavaScript/js-notes4/" class="archive-article-date">
-        <time datetime="2020-08-26T06:09:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-26</time>
+<a href="/2020/08/22/personal-notes/JavaScript/js-notes0/" class="archive-article-date">
+        <time datetime="2020-08-22T12:23:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-22</time>
 </a>
 
   
@@ -214,134 +214,84 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><h3 id="一-DOM节点"><a href="#一-DOM节点" class="headerlink" title="一.DOM节点"></a>一.DOM节点</h3><ul>
-<li>Document: 文档顶层节点</li>
-<li>DocumentType: <code>doctype</code>标签</li>
-<li>Element: 网页各种HTML标签</li>
-<li>Attr: 网页元素的属性</li>
-<li>Text: 标签之间或标签包含的文本</li>
-<li>Comment: 注释</li>
-<li>DocumentFragment: 文档的片段</li>
+    <h3 id="1-数据类型"><a href="#1-数据类型" class="headerlink" title="1.数据类型"></a>1.数据类型</h3><p>JavaScript语言共6种数据类型（<code>ES6</code>新增<code>Symbol</code>类型，现提出第八种<code>BigInt</code>）</p>
+<ul>
+<li>Number    (数值)</li>
+<li>String    (字符串)</li>
+<li>Boolean    (布尔值)</li>
+<li>Undefined   (未定义)</li>
+<li>Null    (空值)</li>
+<li>Object    (对象，包括数组、函数)</li>
 </ul>
-<p>浏览器提供一个原生节点对象<code>Node</code>，上面其中节点都继承了<code>Node</code></p>
 <a id="more"></a>
 
-<h3 id="二-Node接口"><a href="#二-Node接口" class="headerlink" title="二.Node接口"></a>二.Node接口</h3><h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><ol>
-<li><p>Node.prototype.nodeType</p>
-<ul>
-<li>文档节点（document）：9，对应常量Node.DOCUMENT_NODE</li>
-<li>元素节点（element）：1，对应常量Node.ELEMENT_NODE</li>
-<li>属性节点（attr）：2，对应常量Node.ATTRIBUTE_NODE</li>
-<li>文本节点（text）：3，对应常量Node.TEXT_NODE</li>
-<li>文档片断节点（DocumentFragment）：11，对应常量Node.DOCUMENT_FRAGMENT_NODE</li>
-<li>文档类型节点（DocumentType）：10，对应常量Node.DOCUMENT_TYPE_NODE</li>
-<li>注释节点（Comment）：8，对应常量Node.COMMENT_NODE</li>
+<h3 id="2-typeof运算符"><a href="#2-typeof运算符" class="headerlink" title="2.typeof运算符"></a>2.typeof运算符</h3><p>可以确定一个值的类型，同样的方法有<code>instanceof</code>运算符、<code>Object.prototype.toString</code>方法.</p>
+<h3 id="3-数值相关全局方法"><a href="#3-数值相关全局方法" class="headerlink" title="3.数值相关全局方法"></a>3.数值相关全局方法</h3><ul>
+<li>parseInt() 用于将字符串转换成数字</li>
+<li>parseFloat() 将字符串转换成浮点数</li>
+<li>isNaN() 判断值是否为NaN</li>
+<li>isFinite() 表示某个值是否为正常的数值</li>
+</ul>
+<h3 id="4-throw语句"><a href="#4-throw语句" class="headerlink" title="4.throw语句"></a>4.throw语句</h3><p><code>throw</code>语句的作用是手动中断程序执行，抛出一个错误</p>
+<h3 id="5-try…catch…finally结构"><a href="#5-try…catch…finally结构" class="headerlink" title="5.try…catch…finally结构"></a>5.try…catch…finally结构</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> error(<span class="string">&#x27;error!&#x27;</span>)</span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(e.name + <span class="string">&#x27;:&#x27;</span> + e.message)</span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;finally&#x27;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>try</code>代码将抛出一个错误，<code>catch</code>捕获到错误并执行代码，不管有没有发生错误，<code>finally</code>都会执行</p>
+<h3 id="6-Object静态方法"><a href="#6-Object静态方法" class="headerlink" title="6.Object静态方法"></a>6.Object静态方法</h3><ol>
+<li>遍历对象属性<ul>
+<li>Object.keys() :传入对象，返回包含对象属性名的数组</li>
+<li>Object.getOwnPropertyNames() :同<code>keys</code>类似，但返回数组包含不可枚举属性</li>
 </ul>
 </li>
-<li><p>Node.prototype.nodeName</p>
-<ul>
-<li>文档节点（document）：#document</li>
-<li>元素节点（element）：大写的标签名</li>
-<li>属性节点（attr）：属性的名称</li>
-<li>文本节点（text）：#text</li>
-<li>文档片断节点（DocumentFragment）：#document-fragment</li>
-<li>文档类型节点（DocumentType）：文档的类型</li>
-<li>注释节点（Comment）：#comment</li>
+<li>对象属性模型的相关方法<ul>
+<li>Object.getOwnPropertyDescriptor() :获取某个属性的描述对象</li>
+<li>Object.defineProperty() :通过描述对象，定义某个属性</li>
+<li>Object.defineProperties() :通过描述对象，定义多个属性</li>
 </ul>
 </li>
-<li><p>Node.prototype.nodeValue<br>只有文本节点，注释节点，属性节点有文本值</p>
+<li>控制对象状态的方法<ul>
+<li>Object.preventExtensions() :防止对象扩展</li>
+<li>Object.isExtensible() :判断对象是否可扩展</li>
+<li>Object.seal() :禁止对象配置</li>
+<li>Object.isSealed() :判断一个对象是否可配置</li>
+<li>Object.freeze() :冻结一个对象</li>
+<li>Object.isFrozen() :判断一个对象是否被冻结</li>
+</ul>
 </li>
-<li><p>Node.prototype.textContent<br>返回当前节点和后代节点的所有文本内容</p>
-</li>
-<li><p>Node.prototype.baseUrl<br>返回当前网页绝对路径的字符串，只读</p>
-</li>
-<li><p>Node.prototype.ownerDocument<br>返回当前节点所在的顶层文档对象，即<code>document</code></p>
-</li>
-<li><p>Node.prototype.nextSibling<br>返回后一个兄弟节点，包含文本节点和注释节点</p>
-</li>
-<li><p>Node.prototype.previousSibling<br>返回前一个兄弟节点</p>
-</li>
-<li><p>Node.prototype.parentNode<br>返回当前节点的父节点，三种可能，元素节点，文档节点，文档片段节点</p>
-</li>
-<li><p>Node.prototype.parentElement<br>返回当前节点的父元素节点</p>
-</li>
-<li><p>Node.prototype.firstChild, lastChild<br>返回当前节点的第一个与最后一个子节点，包含元素，文本注释节点</p>
-</li>
-<li><p>Node.prototype.childNodes<br>返回当前节点所有子节点组成的类数组对象</p>
-</li>
-<li><p>Node.prototype.isConnected<br>表示当前节点是否在文档之中</p>
-</li>
-<li><p>Node.prototype.</p>
+<li>原型链相关方法<ul>
+<li>Object.create() :指定原型对象和属性，返回一个新的对象</li>
+<li>Object.getPrototypeOf() :获取对象的<code>prototype</code>对象</li>
+</ul>
 </li>
 </ol>
-<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><ol>
-<li><p>Node.prototype.appendChild()<br>将参数节点插入某节点，返回值为参数节点</p>
-</li>
-<li><p>Node.prototype.hasChildNodes()<br>是否有子节点</p>
-</li>
-<li><p>Node.prototype.cloneNode(true)<br>克隆出一个节点，参数true表示同时克隆子节点，返回值新节点</p>
-</li>
-<li><p>Node.prototype.insertBefore(newCode, referenceNode)<br>将节点插入父节点内部的指定位置,返回插入的新结点</p>
-</li>
-<li><p>Node.prototype.removeChild()<br>从当前节点移除指定的节点，返回移除的子节点</p>
-</li>
-<li><p>Node.prototype.replaceChild(newChild, oldChild)<br>替换节点</p>
-</li>
-<li><p>Node.prototype.contains()</p>
-<ul>
-<li>参数节点为当前节点返回true</li>
-<li>参数节点为当前节点子节点返回true</li>
-<li>参数节点为当前节点后代节点返回true</li>
+<h3 id="7-Object实例方法"><a href="#7-Object实例方法" class="headerlink" title="7.Object实例方法"></a>7.Object实例方法</h3><ul>
+<li>Object.prototype.valueOf() :返回当前对象对应的值</li>
+<li>Object.prototype.toString() :返回当前对象对应的字符串形式</li>
+<li>Object.prototype.toLocaleString() :返回当前对象对应的本地字符串形式</li>
+<li>Object.prototype.hasOwnProperty() :判断某个属性是否为当前对象自身的属性，还是继承自原型对象的属性</li>
+<li>Object.prototype.isPrototypeOf() :判断当前对象是否为另一个对象的原型</li>
+<li>Object.prototype.propertyIsEnumerable() :判断某个属性是否可枚举</li>
+</ul>
+<h3 id="8-属性描述对象"><a href="#8-属性描述对象" class="headerlink" title="8.属性描述对象"></a>8.属性描述对象</h3><ol>
+<li>属性描述对象元属性<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    value: <span class="literal">undefined</span>,                 <span class="comment">//该属性属性值</span></span><br><span class="line">    writable: <span class="literal">true</span>,                  <span class="comment">//表示该属性是否可改写</span></span><br><span class="line">    enumerable: <span class="literal">true</span>,               <span class="comment">//属性是否可遍历</span></span><br><span class="line">    configurable: <span class="literal">true</span>,            <span class="comment">//属性描述对象是否可改，value不算</span></span><br><span class="line">    get: <span class="literal">undefined</span>,                 <span class="comment">//取值函数getter</span></span><br><span class="line">    set: <span class="literal">undefined</span>                  <span class="comment">//存值函数setter</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>Object.getOwnPropertyDescriptor(obj, ‘proName’)<br>该方法可获取对象自身属性的描述对象</li>
+<li>Object.getOwnPropertyNames()<br>返回所有属性名组成的数组，包含不可遍历属性</li>
+<li>Object.defineProperty(object, propertyName, attributesObject),Object.defineProperties(Object, propertyObject)<ul>
+<li>object :属性所在对象</li>
+<li>propertyName :属性名，string</li>
+<li>attributesObject :属性描述对象</li>
+<li>propertyObject :属性对象,例{p1: { value: 1, enumerable: false }}</li>
 </ul>
 </li>
-<li><p>Node.prototype.compareDocumentPosition()  </p>
-<ul>
-<li>0 表示两个节点相同</li>
-<li>1 不在同一个文档</li>
-<li>2 参数节点在当前节点前面</li>
-<li>4 在后面</li>
-<li>8 参数节点包含当前节点</li>
-<li>16 当前节点包含参数节点</li>
-<li>32 浏览器内部使用</li>
+<li>Object.prototype.propertyIsEnumerable()<br>判断对象自身属性是否可遍历</li>
+<li>存取器（getter(), setter()）<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 存取器常用于属性值依赖于对像内部数据的场合</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    $n = <span class="number">5</span>,</span><br><span class="line">    <span class="keyword">get</span> <span class="title">next</span>() &#123; <span class="keyword">return</span> <span class="built_in">this</span>.$n++ &#125;,</span><br><span class="line">    <span class="keyword">set</span> <span class="title">next</span>(<span class="params">n</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (n &gt;= <span class="built_in">this</span>.$n) &#123;</span><br><span class="line">            <span class="built_in">this</span>. $n = n</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">&#x27;新的值必须大于当前值&#x27;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.next    <span class="comment">// 5</span></span><br><span class="line">obj.next = <span class="number">10</span></span><br><span class="line">obj.next    <span class="comment">// 10</span></span><br><span class="line">obj.next = <span class="number">5</span></span><br><span class="line"><span class="comment">// Uncaught Error: 新的值必须大于当前值</span></span><br></pre></td></tr></table></figure></li>
+<li>拷贝对象<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> extend = <span class="function"><span class="keyword">function</span> (<span class="params">to, from</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> property <span class="keyword">in</span> <span class="keyword">from</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!<span class="keyword">from</span>.hasOwnProperty(property)) <span class="keyword">continue</span>    <span class="comment">// 过滤继承属性</span></span><br><span class="line">        <span class="built_in">Object</span>.defineProperty(</span><br><span class="line">            to,</span><br><span class="line">            property,</span><br><span class="line">            <span class="built_in">Object</span>.getOwnPropertyDescriptor(<span class="keyword">from</span>, property)</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> to</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>控制对象状态<ul>
+<li>Object.preventExtensions(obj) :使对象无法添加新属性</li>
+<li>Object.isExtensible(obj) :检查是否无法添加新属性</li>
+<li>Object.seal(obj) :是对象无法添加新属性，也无法删除，等同于false掉configurable</li>
+<li>Object.isSealed(obj) :检查是否用过seal</li>
+<li>Object.freeze(obj) :使对象无法做出修改，变成常量一般的存在</li>
+<li>Object.isFrozen(obj) :检查是否用过freeze</li>
 </ul>
-</li>
-<li><p>Node.prototype.isEqualNode(), isSameNode()<br>检查两个节点是否相等；检查两个节点是否为同一个节点</p>
-</li>
-<li><p>Node.prototype.normalize()<br>清理当前节点内部的所有文本节点</p>
-</li>
-<li><p>Node.prototype.getRootNode()<br>字如其名，与<code>getOwnerDocument</code>相比可以获取<code>document</code>节点根节点不是<code>null</code>而是<code>document</code></p>
-</li>
-</ol>
-<h3 id="三-NodeList接口与HTMLCollection接口"><a href="#三-NodeList接口与HTMLCollection接口" class="headerlink" title="三.NodeList接口与HTMLCollection接口"></a>三.NodeList接口与HTMLCollection接口</h3><h4 id="NodeList接口"><a href="#NodeList接口" class="headerlink" title="NodeList接口"></a>NodeList接口</h4><p><code>NodeList</code>是一个类数组对象，可以通过以下方法获得</p>
-<ul>
-<li>Node.childNodes</li>
-<li>document.querySelectorAll()</li>
-</ul>
-<h5 id="实例属性方法"><a href="#实例属性方法" class="headerlink" title="实例属性方法"></a>实例属性方法</h5><ol>
-<li><p>NodeList.prototype.length()<br>返回实例包含的节点数量</p>
-</li>
-<li><p>NodeList.prototype.forEach()<br>遍历</p>
-</li>
-<li><p>NodeList.prototype.keys(), values(), entries()<br>返回ES6的遍历器对象，可以通过for…of循环获取</p>
-</li>
-</ol>
-<h4 id="HTMLCollection接口"><a href="#HTMLCollection接口" class="headerlink" title="HTMLCollection接口"></a>HTMLCollection接口</h4><p>节点对象的集合，只包含元素节点，只能用<code>for</code>循环遍历，只读，动态。<br>返回<code>HTMLCollection</code>实例的主要是<code>Document</code>对象的集合属性</p>
-<h3 id="ParentNode接口和ChildNode接口"><a href="#ParentNode接口和ChildNode接口" class="headerlink" title="ParentNode接口和ChildNode接口"></a>ParentNode接口和ChildNode接口</h3><h4 id="ParentNode接口"><a href="#ParentNode接口" class="headerlink" title="ParentNode接口"></a>ParentNode接口</h4><ol>
-<li><p>ParentNode.children<br>返回一个<code>HTMLCollection</code>实例，包含当前节点的所有子元素节点</p>
-</li>
-<li><p>ParentNode.firstElementChild, lastElementChild<br>返回当前节点的第一个子元素节点；最后一个</p>
-</li>
-<li><p>ParentNode.childElementCount<br>返回当前节点的所有元素子节点对象的数量</p>
-</li>
-<li><p>ParentNode.append(), ParentNode.prepend()<br>在当前节点的最后一个元素子节点后面/第一个元素子节点前面追加一个或多个子节点</p>
-</li>
-</ol>
-<h4 id="ChildNode接口"><a href="#ChildNode接口" class="headerlink" title="ChildNode接口"></a>ChildNode接口</h4><ol>
-<li><p>ChildNode.remove()<br>从父结点移除当前节点</p>
-</li>
-<li><p>ChildNode.before(), after()<br>在当前节点的前面/后面添加兄弟节点</p>
-</li>
-<li><p>ChildNode.replaceWith()<br>用参数节点替换当前节点</p>
 </li>
 </ol>
 
@@ -358,7 +308,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://uyc.gitee.io/2020/08/26/tech-notes/JavaScript/js-notes4/" title="JavaScript知识点小记(4)" target="_blank">https://uyc.gitee.io/2020/08/26/tech-notes/JavaScript/js-notes4/</a>
+          <a href="https://uyc.gitee.io/2020/08/22/personal-notes/JavaScript/js-notes0/" title="JavaScript知识点小记(0)" target="_blank">https://uyc.gitee.io/2020/08/22/personal-notes/JavaScript/js-notes0/</a>
         </li>
         
         <li>
@@ -392,7 +342,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/tech-notes//" class="article-tag-list-link color1">tech-notes</a>
+        			<a href="/categories/personal-notes//" class="article-tag-list-link color5">personal-notes</a>
         		</li>
       		
 		</ul>
@@ -447,7 +397,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://uyc.gitee.io/2020/08/26/tech-notes/JavaScript/js-notes4/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://uyc.gitee.io/2020/08/22/personal-notes/JavaScript/js-notes0/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -462,18 +412,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/08/26/tech-notes/JavaScript/js-notes5/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/08/23/personal-notes/JavaScript/js-notes1/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          JavaScript知识点小记(5)
+          JavaScript知识点小记(1)
         
       </div>
     </a>
   
   
-    <a href="/2020/08/25/tech-notes/JavaScript/js-notes3/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JavaScript知识点小记(3)</div>
+    <a href="/2020/08/21/tech-notes/cloudmusic/cloudmusic-note1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">音乐播放器项目知识点(1)</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -500,7 +450,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#DOM"><span class="toc-number">1.</span> <span class="toc-text">DOM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80-DOM%E8%8A%82%E7%82%B9"><span class="toc-number">1.1.</span> <span class="toc-text">一.DOM节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C-Node%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.2.</span> <span class="toc-text">二.Node接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7"><span class="toc-number">1.2.1.</span> <span class="toc-text">属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.2.</span> <span class="toc-text">方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89-NodeList%E6%8E%A5%E5%8F%A3%E4%B8%8EHTMLCollection%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.3.</span> <span class="toc-text">三.NodeList接口与HTMLCollection接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#NodeList%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.3.1.</span> <span class="toc-text">NodeList接口</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%E5%B1%9E%E6%80%A7%E6%96%B9%E6%B3%95"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">实例属性方法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTMLCollection%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.3.2.</span> <span class="toc-text">HTMLCollection接口</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ParentNode%E6%8E%A5%E5%8F%A3%E5%92%8CChildNode%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.4.</span> <span class="toc-text">ParentNode接口和ChildNode接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ParentNode%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.4.1.</span> <span class="toc-text">ParentNode接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ChildNode%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.4.2.</span> <span class="toc-text">ChildNode接口</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">1.数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-typeof%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">2.</span> <span class="toc-text">2.typeof运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%95%B0%E5%80%BC%E7%9B%B8%E5%85%B3%E5%85%A8%E5%B1%80%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">3.数值相关全局方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-throw%E8%AF%AD%E5%8F%A5"><span class="toc-number">4.</span> <span class="toc-text">4.throw语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-try%E2%80%A6catch%E2%80%A6finally%E7%BB%93%E6%9E%84"><span class="toc-number">5.</span> <span class="toc-text">5.try…catch…finally结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-Object%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95"><span class="toc-number">6.</span> <span class="toc-text">6.Object静态方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-Object%E5%AE%9E%E4%BE%8B%E6%96%B9%E6%B3%95"><span class="toc-number">7.</span> <span class="toc-text">7.Object实例方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E5%B1%9E%E6%80%A7%E6%8F%8F%E8%BF%B0%E5%AF%B9%E8%B1%A1"><span class="toc-number">8.</span> <span class="toc-text">8.属性描述对象</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -524,9 +474,9 @@
     <script src="/lib/giteement.browser.js"></script>
   
   <script>
-  <!-- id: "JavaScript知识点小记(4)" -->
+  <!-- id: "JavaScript知识点小记(0)" -->
   var giteement = new Giteement({
-    id: '20200826140900',
+    id: '20200822202300',
     owner: 'uyc',
     repo: 'uyc',
     backcall_uri: 'https://uyc.gitee.io',
