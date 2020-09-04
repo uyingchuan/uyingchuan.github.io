@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://uyc.gitee.io">
-  <title>JavaScript知识点小记(5) | 小u</title>
+  <title>JavaScript闭包及对象私有属性 | 小u</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="DOMDocument节点Document节点代表整个文档">
+  <meta name="description" content="关于闭包及对象私有变量相关的问题中我的理解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript知识点小记(5)">
-<meta property="og:url" content="https://uyc.gitee.io/2020/08/26/personal-notes/JavaScript/js-notes5/index.html">
+<meta property="og:title" content="JavaScript闭包及对象私有属性">
+<meta property="og:url" content="https://uyc.gitee.io/2020/08/28/tech-notes/JavaScript/js-closure/index.html">
 <meta property="og:site_name" content="小u">
-<meta property="og:description" content="DOMDocument节点Document节点代表整个文档">
+<meta property="og:description" content="关于闭包及对象私有变量相关的问题中我的理解">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-08-26T09:09:00.000Z">
-<meta property="article:modified_time" content="2020-08-27T08:50:16.293Z">
+<meta property="article:published_time" content="2020-08-28T08:59:00.000Z">
+<meta property="article:modified_time" content="2020-08-31T03:22:09.837Z">
 <meta property="article:author" content="u影川">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -191,14 +191,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-personal-notes/JavaScript/js-notes5" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-tech-notes/JavaScript/js-closure" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      JavaScript知识点小记(5)
+      JavaScript闭包及对象私有属性
     </h1>
   
 
@@ -210,8 +210,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/08/26/personal-notes/JavaScript/js-notes5/" class="archive-article-date">
-        <time datetime="2020-08-26T09:09:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-26</time>
+<a href="/2020/08/28/tech-notes/JavaScript/js-closure/" class="archive-article-date">
+        <time datetime="2020-08-28T08:59:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-28</time>
 </a>
 
   
@@ -220,128 +220,15 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h1 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h1><h2 id="Document节点"><a href="#Document节点" class="headerlink" title="Document节点"></a>Document节点</h2><p><code>Document</code>节点代表整个文档</p>
+    <p>关于闭包及对象私有变量相关的问题中我的理解</p>
 <a id="more"></a>
 
-<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><h4 id="快捷方式属性"><a href="#快捷方式属性" class="headerlink" title="快捷方式属性"></a>快捷方式属性</h4><ol>
-<li><p>document.defaultView<br>返回<code>document</code>对象所属的<code>window</code>对象</p>
-</li>
-<li><p>document.doctype  </p>
-</li>
-<li><p>document.documentElement<br>返回当前文档的根元素节点，一般是<code>&lt;html&gt;</code></p>
-</li>
-<li><p>document.head, body</p>
-</li>
-<li><p>document.scrollingElement<br>返回文档的滚动元素，标准模式为<code>&lt;html&gt;</code>，兼容模式为<code>&lt;body&gt;</code></p>
-</li>
-<li><p>document.activeElement<br>返回获得当前焦点（focus）的DOM元素，没交点返回<code>&lt;body&gt;</code>元素或<code>null</code></p>
-</li>
-<li><p>document.fullscreenElement<br>返回当前以全屏状态展示的DOM元素</p>
-</li>
-</ol>
-<h4 id="节点集合属性"><a href="#节点集合属性" class="headerlink" title="节点集合属性"></a>节点集合属性</h4><ol>
-<li><p>document.links<br>返回当前文档所有设定了<code>href</code>属性的<code>&lt;a&gt;</code>及<code>&lt;area&gt;</code>节点</p>
-</li>
-<li><p>document.forms<br>返回所有<code>&lt;form&gt;</code>表单节点</p>
-</li>
-<li><p>document.images<br>返回页面所有<code>&lt;img&gt;</code>图片节点</p>
-</li>
-<li><p>document.embeds, document.plugins<br>都返回所有的<code>&lt;embed&gt;</code>节点</p>
-</li>
-<li><p>document.scripts<br>返回所有的<code>&lt;script&gt;</code>节点</p>
-</li>
-<li><p>document.styleSheets<br>返回所有文档内嵌或引入的样式表集合，<code>注：</code>只有这个返回不是<code>HTMLCollection</code>实例</p>
-</li>
-</ol>
-<h4 id="文档静态信息属性"><a href="#文档静态信息属性" class="headerlink" title="文档静态信息属性"></a>文档静态信息属性</h4><ol>
-<li><p>document.documentURI, document.URL<br>都返回当前文档网址字符串，继承自不同的接口</p>
-</li>
-<li><p>document.domain<br>返回当前文档的域名</p>
-</li>
-<li><p>document.location<br>拿到浏览器提供的原生对象<code>Location</code></p>
-</li>
-<li><p>document.lastModified<br>文档最后修改的时间的字符串，格式随浏览器</p>
-</li>
-<li><p>document.title<br>文档标题，可读写</p>
-</li>
-<li><p>document.characterSet<br>文档编码</p>
-</li>
-<li><p>document.referrer<br>返回当前访问者来自哪个网址，无法获取则空字符串</p>
-</li>
-<li><p>document.dir<br>文字方向，左：<code>rtl</code>，右：<code>ltr</code></p>
-</li>
-<li><p>document.compatMode<br><code>BackCompat</code>(向后兼容)和<code>CSS1Compat</code>(严格模式)，一般设置明确的<code>DOCTYPE</code>，值都为严格模式</p>
-</li>
-</ol>
-<h4 id="文档状态属性"><a href="#文档状态属性" class="headerlink" title="文档状态属性"></a>文档状态属性</h4><ol>
-<li><p>document.hidden<br>当前页面窗口是否可见</p>
-</li>
-<li><p>document.visibilityState<br>当前文档的可见状态，四种状态，visible hidden prerender<br>unloaded</p>
-</li>
-<li><p>document.readyState<br>当前文档的加载状态，三种值</p>
-</li>
-</ol>
-<h4 id="document-cookie"><a href="#document-cookie" class="headerlink" title="document.cookie"></a>document.cookie</h4><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ol>
-<li><p>document.open(), close()<br>可写状态</p>
-</li>
-<li><p>document.write(), document.writeIn()<br>写入内容，后者会自行转行</p>
-</li>
-<li><p>document.querySelector(), document.querySelectorAll()<br>使用CSS选择器匹配元素节点，不支持伪元素选择器,后者返回<code>NodeList</code>对象</p>
-</li>
-<li><p>document.getElementsByTagName()<br>标签名匹配节点，返回<code>HTMLCollection</code>对象</p>
-</li>
-<li><p>document.getElementsByClassName()<br>按className匹配节点，返回<code>HTMLCollection</code>实例</p>
-</li>
-<li><p>document.getElementsByName()<br>根据<code>name</code>属性匹配HTML元素，返回<code>NodeList</code>实例</p>
-</li>
-<li><p>document.getElementById()<br>根据<code>id</code>匹配元素节点</p>
-</li>
-<li><p>document.createElement()<br>生成并返回元素节点，标签名可自定义</p>
-</li>
-<li><p>document.createTextNode()<br>生成并返回文本节点</p>
-</li>
-<li><p>document.createAttribute()<br>生成并返回属性节点</p>
-</li>
-<li><p>document.createComment()<br>生成并返回注释节点</p>
-</li>
-<li><p>document.createDocumentFragment()<br><code>DocumentFragment</code>是存在于内存当中的DOM片段，不属于当前文档，常用于生成一段较为复杂的DOM结构，再插入到当前文档，这样的好处是对他的改动不会触发网页的重新渲染。</p>
-</li>
-<li><p>document.createEvent()<br>生成并返回一个<code>Event</code>实例</p>
-</li>
-<li><p>document.addEventListener(), removeEventListener(), dispatchEvent()<br>继承自<code>EventTarget</code>接口，用于处理<code>document</code>节点的事件</p>
-</li>
-<li><p>document.hasFocus()<br>文档之间是否有元素被激活或获得焦点</p>
-</li>
-<li><p>document.adoptNode(), importNode<br>前者移除后者拷贝，从一个文档或片段将节点转移到当前文档</p>
-</li>
-<li><p>document.createNodeIterator()<br>返回body元素子节点的遍历器</p>
-</li>
-<li><p>document.createTreeWalker()<br>返回DOM的子树遍历器</p>
-</li>
-<li><p>document.execCommand()，document.queryCommandSupported()，document.queryCommandEnabled()  </p>
-</li>
-<li><p>document.getSelection()<br>指向<code>window.getSelection()</code></p>
-</li>
-</ol>
-<h2 id="Element节点"><a href="#Element节点" class="headerlink" title="Element节点"></a>Element节点</h2><p><code>Element</code>继承了<code>Node</code>接口</p>
-<ol>
-<li><p>Element.attributes<br>返回所有属性节点组成的类数组对象</p>
-</li>
-<li><p>Element.className, Element.classList</p>
-</li>
-<li><p>Element.innerHTML<br>该元素包含的所有HTML代码，可读写</p>
-</li>
-<li><p>Element.outerHTML<br>当前元素节点的所有HMTL代码，包含自身</p>
-</li>
-<li><p>Element.style</p>
-</li>
-<li><p>Element.children</p>
-</li>
-<li><p>Element.firstElementChild, lastElementChild</p>
-</li>
-<li><p>Element.scrollIntoView()<br>滚动当前元素，进入浏览器的可视区域，类似于<code>window.location.hash</code></p>
-</li>
-</ol>
+<h4 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h4><p>闭包是一种保护私有变量的机制，如果在函数中声明局部变量，该变量会随着函数的完成而销毁，闭包可以使函数内部的变量不被销毁<br>ES6之前js是没有块级作用域的，只有全局和函数作用域，闭包可以解决因没有块级作用域而出现的问题</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这里只说明他的保护私有变量的能力</span></span><br><span class="line"><span class="keyword">const</span> add = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> count = <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> count++</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line">add()   <span class="comment">// count = 1</span></span><br><span class="line">add()   <span class="comment">// count = 2</span></span><br><span class="line">add()   <span class="comment">// count = 3</span></span><br></pre></td></tr></table></figure>
+<p>在上面代码中<code>add</code>是一个返回一个匿名函数的立即执行函数，它返回的函数中包含有立即执行函数的私有变量<code>count</code>，这样就形成了一个闭包，<code>count</code>变量并不会因为函数的执行而销毁，反而一直存在内存中.<br>闭包能保护私有变量，但私有变量多了也会吃内存，日常代码中闭包还是很常见的，理解了就行。</p>
+<h4 id="对象私有属性"><a href="#对象私有属性" class="headerlink" title="对象私有属性"></a>对象私有属性</h4><p>创建对象的私有属性是有必要的，可以使用闭包的形式生成私有属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Private</span>(<span class="params">name,age</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> _weight = <span class="string">&#x27;private&#x27;</span></span><br><span class="line">    <span class="keyword">let</span> _name=name</span><br><span class="line">    <span class="keyword">let</span> _age=age</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line"></span><br><span class="line">        getName: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">&#x27;Name: &#x27;</span> + _name)</span><br><span class="line">        &#125;,</span><br><span class="line">        getAge: <span class="function">() =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">&#x27;Age: &#x27;</span> + _age)</span><br><span class="line">        &#125;,</span><br><span class="line">        setAge: <span class="function">(<span class="params">nAge</span>) =&gt;</span> &#123;</span><br><span class="line">            _age = nAge</span><br><span class="line">        &#125;,</span><br><span class="line">        init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">this</span>.getName()</span><br><span class="line">            <span class="built_in">this</span>.getAge()</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> private = <span class="keyword">new</span> Private(<span class="string">&#x27;Tony&#x27;</span>,<span class="number">30</span>)</span><br><span class="line">private.getAge()</span><br><span class="line"><span class="comment">// Age: 30</span></span><br><span class="line">private.setAge(<span class="number">18</span>)</span><br><span class="line">private.getAge()</span><br><span class="line"><span class="comment">// Age: 18</span></span><br><span class="line"><span class="built_in">console</span>.log(private._weight)    </span><br><span class="line"><span class="comment">// undefined</span></span><br><span class="line">private.init()</span><br><span class="line"><span class="comment">// Name: Tony</span></span><br><span class="line"><span class="comment">// Age: 18</span></span><br></pre></td></tr></table></figure>
+<p>在上面的代码中，想要读写<code>Private</code>中的变量只能通过放出开的接口才可以，这样便形成了对象的私有属性<br><code>init</code>接口的<code>this</code>指向的便是执行时调用接口的实例对象<code>private</code>，该对象在此处只有构造函数放出来的公开接口，对象的私有属性便被实现出来了。</p>
 
     
 
@@ -356,7 +243,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://uyc.gitee.io/2020/08/26/personal-notes/JavaScript/js-notes5/" title="JavaScript知识点小记(5)" target="_blank">https://uyc.gitee.io/2020/08/26/personal-notes/JavaScript/js-notes5/</a>
+          <a href="https://uyc.gitee.io/2020/08/28/tech-notes/JavaScript/js-closure/" title="JavaScript闭包及对象私有属性" target="_blank">https://uyc.gitee.io/2020/08/28/tech-notes/JavaScript/js-closure/</a>
         </li>
         
         <li>
@@ -390,7 +277,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/personal-notes//" class="article-tag-list-link color5">personal-notes</a>
+        			<a href="/categories/tech-notes//" class="article-tag-list-link color1">tech-notes</a>
         		</li>
       		
 		</ul>
@@ -445,7 +332,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://uyc.gitee.io/2020/08/26/personal-notes/JavaScript/js-notes5/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://uyc.gitee.io/2020/08/28/tech-notes/JavaScript/js-closure/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -460,18 +347,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/08/28/tech-notes/JavaScript/js-closure/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/08/29/personal-notes/JavaScript/js-notes6/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          JavaScript闭包及对象私有属性
+          JavaScript知识点小记(6)
         
       </div>
     </a>
   
   
-    <a href="/2020/08/26/personal-notes/JavaScript/js-notes4/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JavaScript知识点小记(4)</div>
+    <a href="/2020/08/26/personal-notes/JavaScript/js-notes5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JavaScript知识点小记(5)</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -498,7 +385,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#DOM"><span class="toc-number">1.</span> <span class="toc-text">DOM</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Document%E8%8A%82%E7%82%B9"><span class="toc-number">1.1.</span> <span class="toc-text">Document节点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7"><span class="toc-number">1.1.1.</span> <span class="toc-text">属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E5%B1%9E%E6%80%A7"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">快捷方式属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8A%82%E7%82%B9%E9%9B%86%E5%90%88%E5%B1%9E%E6%80%A7"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">节点集合属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E9%9D%99%E6%80%81%E4%BF%A1%E6%81%AF%E5%B1%9E%E6%80%A7"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">文档静态信息属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E7%8A%B6%E6%80%81%E5%B1%9E%E6%80%A7"><span class="toc-number">1.1.1.4.</span> <span class="toc-text">文档状态属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#document-cookie"><span class="toc-number">1.1.1.5.</span> <span class="toc-text">document.cookie</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.2.</span> <span class="toc-text">方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Element%E8%8A%82%E7%82%B9"><span class="toc-number">1.2.</span> <span class="toc-text">Element节点</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AD%E5%8C%85"><span class="toc-number">1.</span> <span class="toc-text">闭包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7"><span class="toc-number">2.</span> <span class="toc-text">对象私有属性</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -522,9 +409,9 @@
     <script src="/lib/giteement.browser.js"></script>
   
   <script>
-  <!-- id: "JavaScript知识点小记(5)" -->
+  <!-- id: "JavaScript闭包及对象私有属性" -->
   var giteement = new Giteement({
-    id: '20200826170900',
+    id: '20200828165900',
     owner: 'uyc',
     repo: 'uyc',
     backcall_uri: 'https://uyc.gitee.io',

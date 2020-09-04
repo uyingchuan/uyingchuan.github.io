@@ -203,7 +203,7 @@
 
 
   
-    <article id="post-personal-notes/JavaScript/js-notes6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-tech-notes/JavaScript/js-debounce" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -211,7 +211,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2020/08/28/personal-notes/JavaScript/js-notes6/">JavaScript闭包及对象私有属性</a>
+	  <a class="article-title" href="/2020/09/04/tech-notes/JavaScript/js-debounce/">函数防抖与节流</a>
 	
     </h1>
   
@@ -219,8 +219,8 @@
 
   
   
-<a href="/2020/08/28/personal-notes/JavaScript/js-notes6/" class="archive-article-date">
-        <time datetime="2020-08-28T08:59:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-28</time>
+<a href="/2020/09/04/tech-notes/JavaScript/js-debounce/" class="archive-article-date">
+        <time datetime="2020-09-04T13:21:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-04</time>
 </a>
 
   
@@ -229,10 +229,114 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>关于闭包及对象私有变量相关的问题中我的理解</p>
+    <p>这里介绍了简单的函数防抖与节流代码</p>
     
-    <a class="article-more-a" href="/2020/08/28/personal-notes/JavaScript/js-notes6/#more">more >></a>
+    <a class="article-more-a" href="/2020/09/04/tech-notes/JavaScript/js-debounce/#more">more >></a>
     
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/tech-notes//" class="article-tag-list-link color1">tech-notes</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/09/04/tech-notes/JavaScript/js-debounce/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-personal-notes/JavaScript/js-notes6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/08/29/personal-notes/JavaScript/js-notes6/">JavaScript知识点小记(6)</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/08/29/personal-notes/JavaScript/js-notes6/" class="archive-article-date">
+        <time datetime="2020-08-29T08:11:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-29</time>
+</a>
+
+  
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="关于js的异步编程"><a href="#关于js的异步编程" class="headerlink" title="关于js的异步编程"></a>关于js的异步编程</h2><h3 id="传统方法"><a href="#传统方法" class="headerlink" title="传统方法"></a>传统方法</h3><p>ES6之前，异步编程大概有四种  </p>
+<ul>
+<li>回调函数</li>
+<li>事件监听</li>
+<li>发布/订阅</li>
+<li>Promise对象</li>
+</ul>
+<p>Generator函数将JavaScript异步编程带入了一个全新的阶段，但他用起来有点复杂  </p>
+<p>在<code>ES2017</code>标准引入了<code>async</code>函数，他是<code>Generator</code>的语法糖，使得异步编程变得更为方便</p>
+<h3 id="Class-类"><a href="#Class-类" class="headerlink" title="Class(类)"></a>Class(类)</h3><p>ES6的类完全可以看作构造函数的另一种写法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(x, y) &#123;</span><br><span class="line">        <span class="built_in">this</span>.x = x</span><br><span class="line">        <span class="built_in">this</span>.y = y</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    toString() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;(&#x27;</span> + <span class="built_in">this</span>.x + <span class="string">&#x27;,&#x27;</span> + <span class="built_in">this</span>.y + <span class="string">&#x27;)&#x27;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
     
 
     
@@ -269,7 +373,103 @@
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/28/personal-notes/JavaScript/js-notes6/">展开全文 >></a>
+      <a class="article-more-a" href="/2020/08/29/personal-notes/JavaScript/js-notes6/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-tech-notes/JavaScript/js-closure" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/08/28/tech-notes/JavaScript/js-closure/">JavaScript闭包及对象私有属性</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/08/28/tech-notes/JavaScript/js-closure/" class="archive-article-date">
+        <time datetime="2020-08-28T08:59:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-28</time>
+</a>
+
+  
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>关于闭包及对象私有变量相关的问题中我的理解</p>
+    
+    <a class="article-more-a" href="/2020/08/28/tech-notes/JavaScript/js-closure/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/tech-notes//" class="article-tag-list-link color1">tech-notes</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/08/28/tech-notes/JavaScript/js-closure/">展开全文 >></a>
     </p>
     
 
@@ -1012,210 +1212,10 @@
 
 
   
-    <article id="post-essay/from-a-calm-tomorrow" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
   
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/08/20/essay/from-a-calm-tomorrow/">来自风平浪静的明天</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/08/20/essay/from-a-calm-tomorrow/" class="archive-article-date">
-        <time datetime="2020-08-20T07:43:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-20</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>昨天一天把来自风平浪静的明天这部番刷完了，刷完之后就一直难受，莫名的难受。</p>
-    
-    <a class="article-more-a" href="/2020/08/20/essay/from-a-calm-tomorrow/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">anime</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">life</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/essay//" class="article-tag-list-link color1">essay</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/20/essay/from-a-calm-tomorrow/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-tech-notes/cloudmusic/cloudmusic-note0" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2020/08/10/tech-notes/cloudmusic/cloudmusic-note0/">音乐播放器项目知识点(0)</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2020/08/10/tech-notes/cloudmusic/cloudmusic-note0/" class="archive-article-date">
-        <time datetime="2020-08-10T11:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-10</time>
-</a>
-
-  
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>在这里我会把开发<a target="_blank" rel="noopener" href="https://gitee.com/uyc/vue-cloudmusic">音乐播放器项目</a>中遇到的知识点记下来，方便自己学习，同时是对自己的记录。</p>
-    
-    <a class="article-more-a" href="/2020/08/10/tech-notes/cloudmusic/cloudmusic-note0/#more">more >></a>
-    
-    
-
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Element-UI</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">postcss-pxtorem</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/tech-notes//" class="article-tag-list-link color1">tech-notes</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-    <p class="article-more-link">
-      <a class="article-more-a" href="/2020/08/10/tech-notes/cloudmusic/cloudmusic-note0/">展开全文 >></a>
-    </p>
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 
 
