@@ -6,7 +6,7 @@
   <link href="https://uyc.gitee.io/atom.xml" rel="self"/>
   
   <link href="https://uyc.gitee.io/"/>
-  <updated>2020-09-04T15:57:44.023Z</updated>
+  <updated>2020-09-06T14:23:12.807Z</updated>
   <id>https://uyc.gitee.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>继承与原型链</title>
+    <link href="https://uyc.gitee.io/2020/09/06/tech-notes/JavaScript/js-prototype/"/>
+    <id>https://uyc.gitee.io/2020/09/06/tech-notes/JavaScript/js-prototype/</id>
+    <published>2020-09-06T12:06:00.000Z</published>
+    <updated>2020-09-06T14:23:12.807Z</updated>
+    
+    <content type="html"><![CDATA[<p>原型链在js中是比较重要的一个知识点，js本身就是基于原型的，非常有必要理解js的原型链与继承相关知识。</p><a id="more"></a><h3 id="基于原型链的继承"><a href="#基于原型链的继承" class="headerlink" title="基于原型链的继承"></a>基于原型链的继承</h3><p>js对象都会有一个指向一个原型对象的链，在试图访问对象的属性时，不仅仅会在对象本身上寻找，还会在该对象的原型链上继续往上寻找，一直找到匹配的属性或者到达原型链的末端。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.fi = <span class="number">1</span></span><br><span class="line">    <span class="built_in">this</span>.se = <span class="number">2</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">a.prototype.se = <span class="number">2.1</span></span><br><span class="line">a.prototype.th = <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> b = <span class="keyword">new</span> a()</span><br><span class="line"><span class="comment">// b通过a构造生成，b的原型链便指向了构造函数a的原型对象</span></span><br><span class="line"><span class="comment">// 即 b.__proto__ === a.prototype</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b.se)   <span class="comment">// 2</span></span><br><span class="line"><span class="comment">// 在实例对象b中寻找属性th，先在b自身中寻找</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b.th)   <span class="comment">// 3</span></span><br><span class="line"><span class="comment">// 在实例对象b中寻找属性th，先在b自身中寻找</span></span><br><span class="line"><span class="comment">// 在b中找寻不到便到b的原型链中寻找，即a.prototype</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b.un)  <span class="comment">// undefined</span></span><br><span class="line"><span class="comment">// 在实例对象b中寻找属性th，先在b自身中寻找</span></span><br><span class="line"><span class="comment">// 在b中找寻不到便到b的原型链中寻找，即a.prototype</span></span><br><span class="line"><span class="comment">// 在a.prototype中寻找不到便继续往原型链上找</span></span><br><span class="line"><span class="comment">// 而a.prototype.__proto__ === Object.prototype</span></span><br><span class="line"><span class="comment">// 在Object.prototype中还找不到，继续</span></span><br><span class="line"><span class="comment">// 而Object.prototype.__proto__ === null</span></span><br><span class="line"><span class="comment">// 到这便是原型链的末尾，于是整个原型链如下：</span></span><br><span class="line"><span class="comment">// &#123; fi:1, se: 2 &#125; --&gt; &#123; se: 2.1, th: 3 &#125; --&gt; Object.prototype --&gt; null</span></span><br></pre></td></tr></table></figure><p>js便是这样通过原型链来实现继承的，如果在实例对象<code>obj</code>中找不到属性，便在obj.<strong>proto__中寻找，找不到继续在obj.__proto</strong>.__proto__里寻找，一直到原型链末端<code>null</code>便没有下一个__proto__了，没找到就返回<code>undefined</code></p><p>__proto__不是js标准里的，不用这个属性的好。在ECMAScript标准中是obj.[[Prototype]]，从ES6开始使用Object.getPrototypeOf()和Object.setPrototypeOf()来访问修改[[Prototype]]。</p><p>在遍历对象属性的时候如果不想遍历原型链，可以使用Object实例对象的<code>hasOwnProperty</code>方法，或者<code>Object.keys()</code></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;原型链在js中是比较重要的一个知识点，js本身就是基于原型的，非常有必要理解js的原型链与继承相关知识。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="tech-notes" scheme="https://uyc.gitee.io/categories/tech-notes/"/>
+    
+    
+    <category term="JavaScript" scheme="https://uyc.gitee.io/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>函数防抖与节流</title>

@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://uyc.gitee.io">
-  <title>Archives: 2020 | 小u</title>
+  <title>继承与原型链 | 小u</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="u影川, web前端, blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小u">
-<meta property="og:url" content="https://uyc.gitee.io/archives/2020/index.html">
+  <meta name="description" content="原型链在js中是比较重要的一个知识点，js本身就是基于原型的，非常有必要理解js的原型链与继承相关知识。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="继承与原型链">
+<meta property="og:url" content="https://uyc.gitee.io/2020/09/06/tech-notes/JavaScript/js-prototype/index.html">
 <meta property="og:site_name" content="小u">
-<meta property="og:description" content="u影川, web前端, blog">
+<meta property="og:description" content="原型链在js中是比较重要的一个知识点，js本身就是基于原型的，非常有必要理解js的原型链与继承相关知识。">
 <meta property="og:locale">
+<meta property="article:published_time" content="2020-09-06T12:06:00.000Z">
+<meta property="article:modified_time" content="2020-09-06T14:23:12.807Z">
 <meta property="article:author" content="u影川">
-<meta property="article:tag" content="u影川, web前端开发, vue">
+<meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="小u" type="application/atom+xml">
@@ -189,41 +191,74 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-tech-notes/JavaScript/js-prototype" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+    <h1 class="article-title" itemprop="name">
+      继承与原型链
+    </h1>
+  
+
+
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2020/09/06/tech-notes/JavaScript/js-prototype/" class="archive-article-date">
         <time datetime="2020-09-06T12:06:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-06</time>
 </a>
 
-        </div>
-    	 
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/09/06/tech-notes/JavaScript/js-prototype/">继承与原型链</a>
-	
-    </h1>
   
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>原型链在js中是比较重要的一个知识点，js本身就是基于原型的，非常有必要理解js的原型链与继承相关知识。</p>
+<a id="more"></a>
 
+<h3 id="基于原型链的继承"><a href="#基于原型链的继承" class="headerlink" title="基于原型链的继承"></a>基于原型链的继承</h3><p>js对象都会有一个指向一个原型对象的链，在试图访问对象的属性时，不仅仅会在对象本身上寻找，还会在该对象的原型链上继续往上寻找，一直找到匹配的属性或者到达原型链的末端。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.fi = <span class="number">1</span></span><br><span class="line">    <span class="built_in">this</span>.se = <span class="number">2</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">a.prototype.se = <span class="number">2.1</span></span><br><span class="line">a.prototype.th = <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> b = <span class="keyword">new</span> a()</span><br><span class="line"><span class="comment">// b通过a构造生成，b的原型链便指向了构造函数a的原型对象</span></span><br><span class="line"><span class="comment">// 即 b.__proto__ === a.prototype</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b.se)   <span class="comment">// 2</span></span><br><span class="line"><span class="comment">// 在实例对象b中寻找属性th，先在b自身中寻找</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b.th)   <span class="comment">// 3</span></span><br><span class="line"><span class="comment">// 在实例对象b中寻找属性th，先在b自身中寻找</span></span><br><span class="line"><span class="comment">// 在b中找寻不到便到b的原型链中寻找，即a.prototype</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(b.un)  <span class="comment">// undefined</span></span><br><span class="line"><span class="comment">// 在实例对象b中寻找属性th，先在b自身中寻找</span></span><br><span class="line"><span class="comment">// 在b中找寻不到便到b的原型链中寻找，即a.prototype</span></span><br><span class="line"><span class="comment">// 在a.prototype中寻找不到便继续往原型链上找</span></span><br><span class="line"><span class="comment">// 而a.prototype.__proto__ === Object.prototype</span></span><br><span class="line"><span class="comment">// 在Object.prototype中还找不到，继续</span></span><br><span class="line"><span class="comment">// 而Object.prototype.__proto__ === null</span></span><br><span class="line"><span class="comment">// 到这便是原型链的末尾，于是整个原型链如下：</span></span><br><span class="line"><span class="comment">// &#123; fi:1, se: 2 &#125; --&gt; &#123; se: 2.1, th: 3 &#125; --&gt; Object.prototype --&gt; null</span></span><br></pre></td></tr></table></figure>
+<p>js便是这样通过原型链来实现继承的，如果在实例对象<code>obj</code>中找不到属性，便在obj.<strong>proto__中寻找，找不到继续在obj.__proto</strong>.__proto__里寻找，一直到原型链末端<code>null</code>便没有下一个__proto__了，没找到就返回<code>undefined</code></p>
+<p>__proto__不是js标准里的，不用这个属性的好。在ECMAScript标准中是obj.[[Prototype]]，从ES6开始使用Object.getPrototypeOf()和Object.setPrototypeOf()来访问修改[[Prototype]]。</p>
+<p>在遍历对象属性的时候如果不想遍历原型链，可以使用Object实例对象的<code>hasOwnProperty</code>方法，或者<code>Object.keys()</code></p>
 
-        <div class="article-info info-on-right">
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          u影川
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://uyc.gitee.io/2020/09/06/tech-notes/JavaScript/js-prototype/" title="继承与原型链" target="_blank">https://uyc.gitee.io/2020/09/06/tech-notes/JavaScript/js-prototype/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -235,7 +270,7 @@
 		</ul>
 	</div>
 
-          
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -248,507 +283,142 @@
 	</div>
 
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://uyc.gitee.io/2020/09/06/tech-notes/JavaScript/js-prototype/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/09/04/tech-notes/JavaScript/js-debounce/" class="archive-article-date">
-        <time datetime="2020-09-04T13:21:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-04</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/09/04/tech-notes/JavaScript/js-debounce/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">函数防抖与节流</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/09/04/tech-notes/JavaScript/js-debounce/">函数防抖与节流</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/tech-notes//" class="article-tag-list-link color1">tech-notes</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%8E%9F%E5%9E%8B%E9%93%BE%E7%9A%84%E7%BB%A7%E6%89%BF"><span class="toc-number">1.</span> <span class="toc-text">基于原型链的继承</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+  <div id="giteement-ctn"></div>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/29/personal-notes/JavaScript/js-notes6/" class="archive-article-date">
-        <time datetime="2020-08-29T08:11:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-29</time>
-</a>
-
-        </div>
-    	 
+    <link rel="stylesheet" href="/lib/default.css">
+    <script src="/lib/giteement.browser.js"></script>
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/29/personal-notes/JavaScript/js-notes6/">JavaScript知识点小记(6)</a>
-	
-    </h1>
-  
+  <script>
+  <!-- id: "继承与原型链" -->
+  var giteement = new Giteement({
+    id: '20200906200600',
+    owner: 'uyc',
+    repo: 'uyc',
+    backcall_uri: 'https://uyc.gitee.io',
+    oauth_uri: 'https://cors-anywhere.herokuapp.com/https://gitee.com/oauth/token',
+    oauth: {
+      client_id: '179f8380ada5e89c7c36a598c03aa78a5b4946610f2c8abc034e84ffe8f25c0d',
+      client_secret: '3ec14b3c9acddbc6c58192689006d5099fbd5fb631fe64484d24f6b9449855ed'
+    },
+  })
+  giteement.render('giteement-ctn')
+  </script>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/personal-notes//" class="article-tag-list-link color5">personal-notes</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/28/tech-notes/JavaScript/js-closure/" class="archive-article-date">
-        <time datetime="2020-08-28T08:59:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-28</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/28/tech-notes/JavaScript/js-closure/">JavaScript闭包及对象私有属性</a>
-	
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/tech-notes//" class="article-tag-list-link color1">tech-notes</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/26/personal-notes/JavaScript/js-notes5/" class="archive-article-date">
-        <time datetime="2020-08-26T09:09:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-26</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/26/personal-notes/JavaScript/js-notes5/">JavaScript知识点小记(5)</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/personal-notes//" class="article-tag-list-link color5">personal-notes</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/26/personal-notes/JavaScript/js-notes4/" class="archive-article-date">
-        <time datetime="2020-08-26T06:09:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-26</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/26/personal-notes/JavaScript/js-notes4/">JavaScript知识点小记(4)</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/personal-notes//" class="article-tag-list-link color5">personal-notes</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/25/personal-notes/JavaScript/js-notes3/" class="archive-article-date">
-        <time datetime="2020-08-25T07:38:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-25</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/25/personal-notes/JavaScript/js-notes3/">JavaScript知识点小记(3)</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/personal-notes//" class="article-tag-list-link color5">personal-notes</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/24/personal-notes/JavaScript/js-notes2/" class="archive-article-date">
-        <time datetime="2020-08-24T06:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-24</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/24/personal-notes/JavaScript/js-notes2/">JavaScript知识点小记(2)</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/personal-notes//" class="article-tag-list-link color5">personal-notes</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/23/personal-notes/JavaScript/js-notes1/" class="archive-article-date">
-        <time datetime="2020-08-23T13:06:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-23</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/23/personal-notes/JavaScript/js-notes1/">JavaScript知识点小记(1)</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/personal-notes//" class="article-tag-list-link color5">personal-notes</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/22/personal-notes/JavaScript/js-notes0/" class="archive-article-date">
-        <time datetime="2020-08-22T12:23:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-22</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/22/personal-notes/JavaScript/js-notes0/">JavaScript知识点小记(0)</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/personal-notes//" class="article-tag-list-link color5">personal-notes</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2020/page/2/">2</a><a class="extend next" rel="next" href="/archives/2020/page/2/">Next &amp;raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -780,8 +450,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
