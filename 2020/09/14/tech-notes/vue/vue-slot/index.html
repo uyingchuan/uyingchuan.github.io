@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://uyc.gitee.io">
-  <title>Tag: vue-lazyload | 小u</title>
+  <title>Vue插槽 | 小u</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="u影川, web前端, blog">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小u">
-<meta property="og:url" content="https://uyc.gitee.io/tags/vue-lazyload/index.html">
+  <meta name="description" content="插槽，可以简单理解为在当前组件留下一个位置为使用该组件时接收一些非固定的内容详见 官方文档">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue插槽">
+<meta property="og:url" content="https://uyc.gitee.io/2020/09/14/tech-notes/vue/vue-slot/index.html">
 <meta property="og:site_name" content="小u">
-<meta property="og:description" content="u影川, web前端, blog">
+<meta property="og:description" content="插槽，可以简单理解为在当前组件留下一个位置为使用该组件时接收一些非固定的内容详见 官方文档">
 <meta property="og:locale">
+<meta property="article:published_time" content="2020-09-14T08:25:00.000Z">
+<meta property="article:modified_time" content="2020-09-14T09:37:57.779Z">
 <meta property="article:author" content="u影川">
-<meta property="article:tag" content="u影川, web前端开发, vue">
+<meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="小u" type="application/atom+xml">
@@ -76,8 +78,6 @@
 				<li><a href="/" >主页</a></li>
 			
 				<li><a href="/categories/tech-notes/" >技术笔记</a></li>
-			
-				<li><a href="/categories/essay/" >心情随笔</a></li>
 			
 				<li><a href="/categories/personal-notes/" >个人笔记</a></li>
 			
@@ -147,8 +147,6 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -167,13 +165,11 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 25%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 25%"><a href="/categories/tech-notes/">技术笔记</a></li>
+					<li style="width: 33.333333333333336%"><a href="/categories/tech-notes/">技术笔记</a></li>
 		        
-					<li style="width: 25%"><a href="/categories/essay/">心情随笔</a></li>
-		        
-					<li style="width: 25%"><a href="/categories/personal-notes/">个人笔记</a></li>
+					<li style="width: 33.333333333333336%"><a href="/categories/personal-notes/">个人笔记</a></li>
 		        
 				</ul>
 			</nav>
@@ -189,61 +185,96 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-tech-notes/vue/vue-slot" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/08/21/tech-notes/cloudmusic/cloudmusic-note1/" class="archive-article-date">
-        <time datetime="2020-08-21T08:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-21</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/08/21/tech-notes/cloudmusic/cloudmusic-note1/">音乐播放器项目知识点(1)</a>
-	
+    <h1 class="article-title" itemprop="name">
+      Vue插槽
     </h1>
   
 
 
-        <div class="article-info info-on-right">
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2020/09/14/tech-notes/vue/vue-slot/" class="archive-article-date">
+        <time datetime="2020-09-14T08:25:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-14</time>
+</a>
+
+  
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>插槽，可以简单理解为在当前组件留下一个位置为使用该组件时接收一些非固定的内容<br>详见 <a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/guide/components-slots.html">官方文档</a></p>
+<a id="more"></a>
+
+<p>Vue2.6之后，插槽指令统一为<code>v-slot</code>， 缩写为<code>#</code>。</p>
+<h3 id="具名插槽"><a href="#具名插槽" class="headerlink" title="具名插槽"></a>具名插槽</h3><p>当想在子组件的不同位置插入不同的内容时，需要给每个位置都定义一个插槽名</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// base-component组件</span></span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;header&gt;</span><br><span class="line">        &lt;slot name=<span class="string">&quot;header&quot;</span>&gt;&lt;/slot&gt;</span><br><span class="line">    &lt;/header&gt;</span><br><span class="line">    &lt;main&gt;</span><br><span class="line">        &lt;slot&gt;&lt;/slot&gt;</span><br><span class="line">    &lt;main&gt;</span><br><span class="line">    &lt;footer&gt;</span><br><span class="line">        &lt;slot name=<span class="string">&quot;footer&quot;</span>&gt;&lt;/slot&gt;</span><br><span class="line">    &lt;footer&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>上面组件定义了三个插槽，中间的插槽未定义插槽名，它会带有隐含的名字 <code>default</code>，可使用该名字或者省略，使用插槽指令的缩写形式不能省略插槽名。<br>想要向具名插槽提供内容，需要用一个 <code>template</code>元素上使用 <code>v-slot</code>指令提供名称。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;base-component&gt;</span><br><span class="line">    &lt;template v-slot:header&gt;</span><br><span class="line">        &lt;h1&gt;Header&lt;/h1&gt;</span><br><span class="line">    &lt;/template&gt;</span><br><span class="line"></span><br><span class="line">    &lt;p&gt;This is main. &lt;/p&gt;</span><br><span class="line"></span><br><span class="line">    &lt;template v-slot:header&gt;</span><br><span class="line">        &lt;p&gt;Footer&lt;/p&gt;</span><br><span class="line">    &lt;/template&gt;</span><br><span class="line">&lt;/base-component&gt;</span><br></pre></td></tr></table></figure>
+<p>渲染出来的结果是三段内容分别插入 base-component组件的三处插槽位置。 </p>
+<p>另外插槽内还可以定义默认内容，使用组件插槽时不插入内容就渲染默认内容，有新内容就覆盖插槽中默认的内容。</p>
+<h3 id="作用域插槽"><a href="#作用域插槽" class="headerlink" title="作用域插槽"></a>作用域插槽</h3><p>有时插入插槽的内容需要访问子组件数据，就需要在插槽中绑定数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// base-component组件</span></span><br><span class="line">&lt;span&gt;</span><br><span class="line">    &lt;slot name=<span class="string">&quot;userName&quot;</span> v-bind:user=<span class="string">&quot;user&quot;</span>&gt;</span><br><span class="line">        &#123;&#123; user.lastName &#125;&#125;</span><br><span class="line">    &lt;/slot&gt;</span><br><span class="line">&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<p>绑定在插槽中的属性被称为<code>插槽 prop</code>，当在父组件中使用插槽时，用带值的<code>v-slot</code>定义<code>插槽 prop</code>的名字来获取子组件上的数据</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;base-component&gt;</span><br><span class="line">    &lt;template v-slot:userName=<span class="string">&quot;scope&quot;</span>&gt;</span><br><span class="line">        &#123;&#123; scope.user.firstName + scope.user.lastName &#125;&#125;</span><br><span class="line">    &lt;/template&gt;</span><br><span class="line">&lt;/base-component&gt;</span><br></pre></td></tr></table></figure>
+<p>这个例子中将包含<code>插槽 prop</code>的对象名命名为<code>scope</code>，这个名字可以自定义.</p>
+<p>另外插槽名字也是可以省略的，对与默认名插槽获取插槽作用域可以<code>v-slot=&quot;scopeName&quot;</code>获取<code>插槽 prop</code>对象。</p>
+<h4 id="解构-插槽-prop"><a href="#解构-插槽-prop" class="headerlink" title="解构 插槽 prop"></a>解构 插槽 prop</h4><p>在支持的环境下可以使用es6的解构来传入<code>插槽 prop</code>。<code>v-slot=&#123; user &#125;</code>便可直接使用子组件作用域的<code>user</code>对象。</p>
+<h4 id="动态插槽名"><a href="#动态插槽名" class="headerlink" title="动态插槽名"></a>动态插槽名</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;base-component&gt;</span><br><span class="line">    &lt;template v-slot:[dynamicSlotName] &gt;</span><br><span class="line">        ...</span><br><span class="line">    &lt;/template&gt;</span><br><span class="line">&lt;/base-component&gt;</span><br></pre></td></tr></table></figure>
+
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          u影川
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://uyc.gitee.io/2020/09/14/tech-notes/vue/vue-slot/" title="Vue插槽" target="_blank">https://uyc.gitee.io/2020/09/14/tech-notes/vue/vue-slot/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Vue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">vue-lazyload</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -256,17 +287,142 @@
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+    
 
     
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://uyc.gitee.io/2020/09/14/tech-notes/vue/vue-slot/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/09/13/tech-notes/vue/vue-lazy-load/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Vue路由懒加载</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E5%90%8D%E6%8F%92%E6%A7%BD"><span class="toc-number">1.</span> <span class="toc-text">具名插槽</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%8F%92%E6%A7%BD"><span class="toc-number">2.</span> <span class="toc-text">作用域插槽</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E6%9E%84-%E6%8F%92%E6%A7%BD-prop"><span class="toc-number">2.1.</span> <span class="toc-text">解构 插槽 prop</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E6%8F%92%E6%A7%BD%E5%90%8D"><span class="toc-number">2.2.</span> <span class="toc-text">动态插槽名</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+  <div id="giteement-ctn"></div>
+  
+    <link rel="stylesheet" href="/lib/default.css">
+    <script src="/lib/giteement.browser.js"></script>
+  
+  <script>
+  <!-- id: "Vue插槽" -->
+  var giteement = new Giteement({
+    id: '20200914162500',
+    owner: 'uyc',
+    repo: 'uyc',
+    backcall_uri: 'https://uyc.gitee.io',
+    oauth_uri: 'https://cors-anywhere.herokuapp.com/https://gitee.com/oauth/token',
+    oauth: {
+      client_id: '179f8380ada5e89c7c36a598c03aa78a5b4946610f2c8abc034e84ffe8f25c0d',
+      client_secret: '3ec14b3c9acddbc6c58192689006d5099fbd5fb631fe64484d24f6b9449855ed'
+    },
+  })
+  giteement.render('giteement-ctn')
+  </script>
+
+
+
+
+
+
 
 
           </div>
@@ -298,15 +454,15 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -386,19 +542,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">anime</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">life</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -406,15 +554,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">postcss-pxtorem</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue-lazyload</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">vue, webpack</a>
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
             
             <div class="clearfix"></div>
