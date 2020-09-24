@@ -18,7 +18,7 @@
 <meta property="og:description" content="程序设计是给出解决特定问题程序的过程，应当包括分析问题（明确需求）、设计（确定数据结构及算法）、编码（实现具体功能）、调试等不同阶段。本文主要记录 JS 程序设计的设计原则、编程技巧与设计模式。">
 <meta property="og:locale">
 <meta property="article:published_time" content="2020-09-15T05:06:00.000Z">
-<meta property="article:modified_time" content="2020-09-20T14:37:30.360Z">
+<meta property="article:modified_time" content="2020-09-24T12:38:43.485Z">
 <meta property="article:author" content="u影川">
 <meta property="article:tag" content="Javascript">
 <meta name="twitter:card" content="summary">
@@ -335,7 +335,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> incrementCommand = &#123;</span><br><span class="line">  execute: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// code</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>不过接下来的例子是一个自增命令，提供执行、撤销、重做功能<br>采用对象创建处理的方式，定义这个自增</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// // 自增</span></span><br><span class="line"><span class="comment">// class IncrementCommand &#123;</span></span><br><span class="line"><span class="comment">//   constructor() &#123;</span></span><br><span class="line"><span class="comment">//     // 当前值</span></span><br><span class="line"><span class="comment">//     this.value = 0</span></span><br><span class="line"><span class="comment">//     // 命令栈</span></span><br><span class="line"><span class="comment">//     this.stack = []</span></span><br><span class="line"><span class="comment">//     // 栈指针位置</span></span><br><span class="line"><span class="comment">//     this.stackPosition = -1</span></span><br><span class="line"><span class="comment">//   &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//   // 执行</span></span><br><span class="line"><span class="comment">//   execute() &#123;</span></span><br><span class="line"><span class="comment">//     this._clearRedo()</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//     this.value += 2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//     this.stack.push(command)</span></span><br><span class="line"><span class="comment">//   &#125;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br></pre></td></tr></table></figure>
+<p>todo。。。</p>
 
     
 
