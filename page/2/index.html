@@ -6,22 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://uyc.gitee.io">
-  <title>Vue路由懒加载 | 小u</title>
+  <title>小u</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="懒加载也叫延迟加载，即在需要使用指定代码块的时候才进行代码块的加载。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Vue路由懒加载">
-<meta property="og:url" content="https://uyc.gitee.io/2020/09/13/tech-notes/vue/vue-lazy-load/index.html">
+    
+    <!-- <meta name="keywords" content="u影川, web前端开发, vue">
+    <meta name="description" content="u影川, web前端, blog"> -->
+  
+  <meta name="description" content="u影川, web前端, blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="小u">
+<meta property="og:url" content="https://uyc.gitee.io/page/2/index.html">
 <meta property="og:site_name" content="小u">
-<meta property="og:description" content="懒加载也叫延迟加载，即在需要使用指定代码块的时候才进行代码块的加载。">
+<meta property="og:description" content="u影川, web前端, blog">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-09-13T06:59:00.000Z">
-<meta property="article:modified_time" content="2020-09-14T11:21:47.499Z">
 <meta property="article:author" content="u影川">
-<meta property="article:tag" content="vue">
-<meta property="article:tag" content="webpack">
+<meta property="article:tag" content="u影川, web前端开发, vue">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="小u" type="application/atom+xml">
@@ -186,27 +187,34 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-tech-notes/vue/vue-lazy-load" class="article article-type-post " itemscope itemprop="blogPost">
+            
+  
+    <script src="/lib/oauthcallback.browser.js"></script>
+  
+  <script>
+    Oauthcallback();
+  </script>
+
+
+  
+    <article id="post-personal-notes/about-this-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
-    <h1 class="article-title" itemprop="name">
-      Vue路由懒加载
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/08/06/personal-notes/about-this-blog/">建博</a>
+	
     </h1>
   
 
 
   
   
-        
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
-<a href="/2020/09/13/tech-notes/vue/vue-lazy-load/" class="archive-article-date">
-        <time datetime="2020-09-13T06:59:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-13</time>
+<a href="/2020/08/06/personal-notes/about-this-blog/" class="archive-article-date">
+        <time datetime="2020-08-06T12:59:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-06</time>
 </a>
 
   
@@ -215,70 +223,26 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>懒加载也叫延迟加载，即在需要使用指定代码块的时候才进行代码块的加载。  </p>
-<a id="more"></a>
-
-<p>详见 <a target="_blank" rel="noopener" href="https://router.vuejs.org/zh/guide/advanced/lazy-loading.html">官方文档</a></p>
-<h3 id="路由懒加载"><a href="#路由懒加载" class="headerlink" title="路由懒加载"></a>路由懒加载</h3><p>在打包构建应用时，JavaScript包会非常大，影响页面的加载。如果将不同的路由对应的组件分割成不同的代码块，在路由被访问的时候才进行对应代码块的加载，会大大提高首页的加载效率。</p>
-<p>使用vue的异步组件结合webpack代码分割功能实现的懒加载可以轻松的实现路由懒加载</p>
-<p>将异步组件定义成返回一个Promise的工厂函数（该函数返回的Promise应该resolve组件本身），然后使用webpack（&gt;webpack2）的动态import语法定义代码分块点，结合这两点就可以定义一个能被webpack自动代码分割的异步组件。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Foo = <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="string">&#x27;./Foo.vue&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-<h4 id="把组件按组分块"><a href="#把组件按组分块" class="headerlink" title="把组件按组分块"></a>把组件按组分块</h4><p>如果需要把某个路由下的所有组件打包在同一个异步块（chunk）中，需要使用webpack（&gt;webpack2.4）的特殊注释语法来提供chunk name</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Foo = <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="comment">/* webpackChunkName: &quot;group-foo&quot; */</span> <span class="string">&#x27;./Foo.vue&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> Bar = <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="comment">/* webpackChunkName: &quot;group-bar&quot; */</span> <span class="string">&#x27;./Bar.vue&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> Baz = <span class="function">() =&gt;</span> <span class="keyword">import</span>(<span class="comment">/* webpackChunkName: &quot;group-baz&quot; */</span> <span class="string">&#x27;./Baz.vue&#x27;</span>)</span><br></pre></td></tr></table></figure>
+    <p>学习之余建个博客记录自己。</p>
+<p>愿我们的付出都能变成美好的未来！</p>
 
     
 
     
 
-    
-    <div class="declare"> 
-      <ul class="post-copyright">
-        <li>
-          <strong>本文作者：</strong>
-          u影川
-        </li>
-        <li>
-          <strong>本文链接：</strong>
-          <a href="https://uyc.gitee.io/2020/09/13/tech-notes/vue/vue-lazy-load/" title="Vue路由懒加载" target="_blank">https://uyc.gitee.io/2020/09/13/tech-notes/vue/vue-lazy-load/</a>
-        </li>
-        
-        <li>
-          <strong>版权声明： </strong>
-          
-          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
-        </li>
-        
-      </ul>
-    </div>
     
 
   </div>
   <div class="article-info article-info-index">
     
     
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
     
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/tech-notes//" class="article-tag-list-link color1">tech-notes</a>
+        			<a href="/categories/personal-notes//" class="article-tag-list-link color5">personal-notes</a>
         		</li>
       		
 		</ul>
@@ -286,85 +250,16 @@
 
 
     
-
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/08/06/personal-notes/about-this-blog/">展开全文 >></a>
+    </p>
     
-    
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a> -->
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://uyc.gitee.io/2020/09/13/tech-notes/vue/vue-lazy-load/" alt="微信分享二维码"> -->
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
 
     
     <div class="clearfix"></div>
   </div>
   </div>
 </article>
-
-
-<nav id="article-nav">
-  
-    <a href="/2020/09/14/tech-notes/vue/vue-slot/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Vue插槽
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/09/06/tech-notes/JavaScript/js-prototype/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">继承与原型链</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -379,57 +274,18 @@
         </div>
         
         
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E6%87%92%E5%8A%A0%E8%BD%BD"><span class="toc-number">1.</span> <span class="toc-text">路由懒加载</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%8A%E7%BB%84%E4%BB%B6%E6%8C%89%E7%BB%84%E5%88%86%E5%9D%97"><span class="toc-number">1.1.</span> <span class="toc-text">把组件按组分块</span></a></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
     </div>
 </aside>
 
 
 
 
-
-
-
-
-
-
-  <div id="giteement-ctn"></div>
   
-    <link rel="stylesheet" href="/lib/default.css">
-    <script src="/lib/giteement.browser.js"></script>
   
-  <script>
-  <!-- id: "Vue路由懒加载" -->
-  var giteement = new Giteement({
-    id: '20200913145900',
-    owner: 'uyc',
-    repo: 'uyc',
-    backcall_uri: 'https://uyc.gitee.io',
-    oauth_uri: 'https://cors-anywhere.herokuapp.com/https://gitee.com/oauth/token',
-    oauth: {
-      client_id: '179f8380ada5e89c7c36a598c03aa78a5b4946610f2c8abc034e84ffe8f25c0d',
-      client_secret: '3ec14b3c9acddbc6c58192689006d5099fbd5fb631fe64484d24f6b9449855ed'
-    },
-  })
-  giteement.render('giteement-ctn')
-  </script>
-
-
-
-
-
-
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
+  
 
 
           </div>
@@ -460,8 +316,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
